@@ -4,7 +4,7 @@ const charts = [
   ['07','07_priority_places_map'],['08','08_state_intersections'],
   ['09','09_monitored_declines'],['10','10_priority_coverage'],['11','11_birds_mammals_states']
 ];
-const version = '20261014-regional-maps-3';
+const version = '20261014-regional-maps-4';
 const views = new Map();
 
 async function renderCharts(){
@@ -18,6 +18,8 @@ async function renderCharts(){
       const response=await fetch('specs/'+name+'.json?v='+version);
       if(!response.ok)throw new Error('Specification unavailable');
       const spec=await response.json();
+      if(['01','11'].includes(id))spec.encoding.x.axis={tickCount:5};
+      if(id==='09')spec.layer.forEach(layer=>{layer.encoding.x.axis={tickCount:5}});
       // Give concatenated charts their actual plot width, including axis space.
       if(id==='08')spec.vconcat.forEach(panel=>{panel.width=Math.max(180,el.clientWidth-62)});
       if(id==='03' && el.clientWidth<420)Object.assign(spec.layer[1].mark,{angle:-50,align:'left'});
