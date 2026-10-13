@@ -26,7 +26,12 @@
     }
   },
   "projection": {
-    "type": "equalEarth"
+    "type": "equalEarth",
+    "rotate": [
+      -134,
+      0,
+      0
+    ]
   },
   "layer": [
     {
