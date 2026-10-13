@@ -7,8 +7,8 @@ This visual story is for a general Australian audience. It asks how nationally r
 ## Data sources
 
 1. **Australian Government Department of Climate Change, Energy, the Environment and Water (DCCEEW).** [Threatened Species State Lists](https://data.gov.au/data/dataset/ae652011-f39e-4c6c-91b8-1dc2d2dfee8f), CSV extracted 28 August 2026, published under Creative Commons Attribution 3.0 Australia. Each row is one listed taxon entry and includes a scientific name, national EPBC status, class and indicative state occurrence flags.
-2. **Threatened Species Index (TSX), University of Queensland and partners.** [2025 Trend Summary](https://tsx.org.au/wp-content/uploads/2025/11/Threatened_Species_Index_2025_Trend_Summary_20251125.pdf), especially pp. 4–9. The 2025 report summarises monitoring data through 2022. Group declines since 1985 and bird trends by jurisdiction since 2000 were transcribed from the report. The TSX uses monitored threatened and near-threatened taxa; its sample is not the EPBC list.
-3. **Australian Bureau of Statistics.** [ASGS 2026 generalized state and territory boundaries](https://geo.abs.gov.au/arcgis/rest/services/ASGS2026/STE/MapServer/1), retrieved 14 October 2026. Boundaries were simplified for web delivery and the eight mainland states/territories were retained. External territories and Antarctica are omitted from the map geometry.
+2. **Threatened Species Index (TSX), TERN Australia and partners.** [2025 Trend Summary](https://tsx.org.au/wp-content/uploads/2025/11/Threatened_Species_Index_2025_Trend_Summary_20251125.pdf), especially pp. 4–9. The 2025 report summarises monitoring data through 2022. Group declines since 1985 and bird trends by jurisdiction since 2000 were transcribed from the report. The TSX uses monitored threatened and near-threatened taxa; its sample is not the EPBC list.
+3. **Australian Bureau of Statistics.** [ASGS 2026 generalized state and territory boundaries](https://geo.abs.gov.au/arcgis/rest/services/ASGS2026/STE/MapServer/1), retrieved 14 October 2026. Boundaries were simplified for web delivery and the eight states and internal territories, including Tasmania were retained. External territories and Antarctica are omitted from the map geometry.
 4. **DCCEEW.** [Threatened Species Action Plan priority places GIS layer](https://gis.environment.gov.au/gispub/rest/services/evv/Threatened_Species_Priority_Places/MapServer/0), published 2022, retrieved 14 October 2026. The twenty displayed dots use the centroid of each place's largest polygon, so they represent approximate location, not exact boundaries or area.
 
 ## Filtering and calculations
@@ -28,7 +28,7 @@ This visual story is for a general Australian audience. It asks how nationally r
 - **Layout:** The title starts at top left. Four chapters follow a top-to-bottom reading path. Shared card edges and equal columns create sight-lines; whitespace separates topics. The large map occupies the visual centre of the geography chapter. Source: *FIT2179 Course Notes 9 Layout*, pp. 2–6.
 - **Typography:** A short display headline establishes hierarchy; body text uses readable sentence case and moderate line length. Chart notes are visually secondary but remain legible. Source: *FIT2179 Course Notes 11 Typography*, especially pp. 2, 10–12.
 - **Colour:** A small palette is reused consistently. Red indicates greater extinction concern or larger monitored decline, while muted green supports structure and place context. Ordered values change mainly in lightness; no rainbow or red-versus-green categorical scale is used. Source: *FIT2179 Course Notes 8 Colour*, pp. 5–10.
-- **Maps:** The choropleth colours a *percentage change*, not a raw count; it uses an equal-area projection. The separate proportional-symbol map uses circle **area** for state-attached counts. A dot map uses one constant-size mark per priority place. Source: *FIT2179 Course Notes Choropleth*, pp. 2–4; *Proportional Symbol Maps*, pp. 2–5; *Dot Maps*, pp. 2–3; *Map Projections*, pp. 2–5.
+- **Maps:** The choropleth colours a *percentage change*, not a raw count; it uses an Australian Albers equal-area conic projection centred on 134°E, with standard parallels 18°S and 36°S. The Map Projections notes distinguish regional conic projections from Equal Earth, which is intended for world maps. The separate proportional-symbol map uses circle **area** for state-attached counts. A dot map uses one constant-size mark per priority place. Source: *FIT2179 Course Notes Choropleth*, pp. 2–4; *Proportional Symbol Maps*, pp. 2–5; *Dot Maps*, pp. 2–3; *Map Projections*, pp. 2–5.
 - **Storytelling:** Each chart title states the reader task or finding. Notes explain what the measure means and what it cannot establish. Minimal gridlines and borders reduce clutter. Source: *FIT3179 Course Notes 7 Storytelling with Data*, pp. 2–4; *FIT2179 Course Notes 6 Data-ink Ratio and Chartjunk*.
 
 ## Chart register
@@ -48,6 +48,10 @@ This visual story is for a general Australian audience. It asks how nationally r
 | 11 | Grouped bar chart | EPBC bird and mammal state flags | Supports direct within-state comparison |
 
 The brief counts small multiples as one chart. These eleven are separate charts. Heatmap, mosaic, treemap, three map idioms, UpSet and unit chart are eight distinct advanced idioms under the brief's definition of advanced as other than its listed basic idioms. Idiom classification and effectiveness remain subject to tutor assessment.
+
+## Rendering checks
+
+Chart widths are recalculated when the viewport changes. The intersection chart reserves space for its axes, and the 22-by-5 unit grid uses equal cell widths and heights. The mosaic has direct group labels and its complete status legend; the treemap uses dark text on pale fills. Offshore priority places are named on the map. JavaScript and chart specifications have a release identifier in their URLs to avoid retaining an older specification after deployment.
 
 ## Rebuild
 
