@@ -1,0 +1,755 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Largest exact combinations of indicative state occurrence flags",
+  "background": null,
+  "padding": 8,
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "gridColor": "#dce7de",
+      "domainColor": "#8fa59b",
+      "tickColor": "#8fa59b",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "labelFontSize": 11
+    }
+  },
+  "vconcat": [
+    {
+      "width": "container",
+      "height": 170,
+      "data": {
+        "values": [
+          {
+            "pattern": "QLD",
+            "states": [
+              "QLD"
+            ],
+            "count": 92,
+            "state_count": 1
+          },
+          {
+            "pattern": "WA",
+            "states": [
+              "WA"
+            ],
+            "count": 71,
+            "state_count": 1
+          },
+          {
+            "pattern": "NSW",
+            "states": [
+              "NSW"
+            ],
+            "count": 67,
+            "state_count": 1
+          },
+          {
+            "pattern": "TAS",
+            "states": [
+              "TAS"
+            ],
+            "count": 48,
+            "state_count": 1
+          },
+          {
+            "pattern": "NSW+QLD",
+            "states": [
+              "NSW",
+              "QLD"
+            ],
+            "count": 37,
+            "state_count": 2
+          },
+          {
+            "pattern": "SA",
+            "states": [
+              "SA"
+            ],
+            "count": 31,
+            "state_count": 1
+          },
+          {
+            "pattern": "External only",
+            "states": [],
+            "count": 25,
+            "state_count": 0
+          },
+          {
+            "pattern": "NT",
+            "states": [
+              "NT"
+            ],
+            "count": 24,
+            "state_count": 1
+          },
+          {
+            "pattern": "VIC",
+            "states": [
+              "VIC"
+            ],
+            "count": 22,
+            "state_count": 1
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS",
+            "states": [
+              "NSW",
+              "VIC",
+              "QLD",
+              "SA",
+              "WA",
+              "TAS"
+            ],
+            "count": 19,
+            "state_count": 6
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "states": [
+              "NSW",
+              "VIC",
+              "QLD",
+              "SA",
+              "WA",
+              "TAS",
+              "NT"
+            ],
+            "count": 17,
+            "state_count": 7
+          },
+          {
+            "pattern": "QLD+WA+NT",
+            "states": [
+              "QLD",
+              "WA",
+              "NT"
+            ],
+            "count": 14,
+            "state_count": 3
+          }
+        ]
+      },
+      "mark": {
+        "type": "bar",
+        "color": "#2b7566"
+      },
+      "encoding": {
+        "x": {
+          "field": "pattern",
+          "type": "nominal",
+          "sort": [
+            "QLD",
+            "WA",
+            "NSW",
+            "TAS",
+            "NSW+QLD",
+            "SA",
+            "External only",
+            "NT",
+            "VIC",
+            "NSW+VIC+QLD+SA+WA+TAS",
+            "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "QLD+WA+NT"
+          ],
+          "axis": null
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "title": "Entries"
+        },
+        "tooltip": [
+          {
+            "field": "pattern",
+            "type": "nominal",
+            "title": "State flags"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Entries"
+          }
+        ]
+      }
+    },
+    {
+      "width": "container",
+      "height": 120,
+      "data": {
+        "values": [
+          {
+            "pattern": "QLD",
+            "state": "NSW",
+            "present": false
+          },
+          {
+            "pattern": "QLD",
+            "state": "VIC",
+            "present": false
+          },
+          {
+            "pattern": "QLD",
+            "state": "QLD",
+            "present": true
+          },
+          {
+            "pattern": "QLD",
+            "state": "SA",
+            "present": false
+          },
+          {
+            "pattern": "QLD",
+            "state": "WA",
+            "present": false
+          },
+          {
+            "pattern": "QLD",
+            "state": "TAS",
+            "present": false
+          },
+          {
+            "pattern": "QLD",
+            "state": "NT",
+            "present": false
+          },
+          {
+            "pattern": "QLD",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "WA",
+            "state": "NSW",
+            "present": false
+          },
+          {
+            "pattern": "WA",
+            "state": "VIC",
+            "present": false
+          },
+          {
+            "pattern": "WA",
+            "state": "QLD",
+            "present": false
+          },
+          {
+            "pattern": "WA",
+            "state": "SA",
+            "present": false
+          },
+          {
+            "pattern": "WA",
+            "state": "WA",
+            "present": true
+          },
+          {
+            "pattern": "WA",
+            "state": "TAS",
+            "present": false
+          },
+          {
+            "pattern": "WA",
+            "state": "NT",
+            "present": false
+          },
+          {
+            "pattern": "WA",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "NSW",
+            "state": "NSW",
+            "present": true
+          },
+          {
+            "pattern": "NSW",
+            "state": "VIC",
+            "present": false
+          },
+          {
+            "pattern": "NSW",
+            "state": "QLD",
+            "present": false
+          },
+          {
+            "pattern": "NSW",
+            "state": "SA",
+            "present": false
+          },
+          {
+            "pattern": "NSW",
+            "state": "WA",
+            "present": false
+          },
+          {
+            "pattern": "NSW",
+            "state": "TAS",
+            "present": false
+          },
+          {
+            "pattern": "NSW",
+            "state": "NT",
+            "present": false
+          },
+          {
+            "pattern": "NSW",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "TAS",
+            "state": "NSW",
+            "present": false
+          },
+          {
+            "pattern": "TAS",
+            "state": "VIC",
+            "present": false
+          },
+          {
+            "pattern": "TAS",
+            "state": "QLD",
+            "present": false
+          },
+          {
+            "pattern": "TAS",
+            "state": "SA",
+            "present": false
+          },
+          {
+            "pattern": "TAS",
+            "state": "WA",
+            "present": false
+          },
+          {
+            "pattern": "TAS",
+            "state": "TAS",
+            "present": true
+          },
+          {
+            "pattern": "TAS",
+            "state": "NT",
+            "present": false
+          },
+          {
+            "pattern": "TAS",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "NSW+QLD",
+            "state": "NSW",
+            "present": true
+          },
+          {
+            "pattern": "NSW+QLD",
+            "state": "VIC",
+            "present": false
+          },
+          {
+            "pattern": "NSW+QLD",
+            "state": "QLD",
+            "present": true
+          },
+          {
+            "pattern": "NSW+QLD",
+            "state": "SA",
+            "present": false
+          },
+          {
+            "pattern": "NSW+QLD",
+            "state": "WA",
+            "present": false
+          },
+          {
+            "pattern": "NSW+QLD",
+            "state": "TAS",
+            "present": false
+          },
+          {
+            "pattern": "NSW+QLD",
+            "state": "NT",
+            "present": false
+          },
+          {
+            "pattern": "NSW+QLD",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "SA",
+            "state": "NSW",
+            "present": false
+          },
+          {
+            "pattern": "SA",
+            "state": "VIC",
+            "present": false
+          },
+          {
+            "pattern": "SA",
+            "state": "QLD",
+            "present": false
+          },
+          {
+            "pattern": "SA",
+            "state": "SA",
+            "present": true
+          },
+          {
+            "pattern": "SA",
+            "state": "WA",
+            "present": false
+          },
+          {
+            "pattern": "SA",
+            "state": "TAS",
+            "present": false
+          },
+          {
+            "pattern": "SA",
+            "state": "NT",
+            "present": false
+          },
+          {
+            "pattern": "SA",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "External only",
+            "state": "NSW",
+            "present": false
+          },
+          {
+            "pattern": "External only",
+            "state": "VIC",
+            "present": false
+          },
+          {
+            "pattern": "External only",
+            "state": "QLD",
+            "present": false
+          },
+          {
+            "pattern": "External only",
+            "state": "SA",
+            "present": false
+          },
+          {
+            "pattern": "External only",
+            "state": "WA",
+            "present": false
+          },
+          {
+            "pattern": "External only",
+            "state": "TAS",
+            "present": false
+          },
+          {
+            "pattern": "External only",
+            "state": "NT",
+            "present": false
+          },
+          {
+            "pattern": "External only",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "NT",
+            "state": "NSW",
+            "present": false
+          },
+          {
+            "pattern": "NT",
+            "state": "VIC",
+            "present": false
+          },
+          {
+            "pattern": "NT",
+            "state": "QLD",
+            "present": false
+          },
+          {
+            "pattern": "NT",
+            "state": "SA",
+            "present": false
+          },
+          {
+            "pattern": "NT",
+            "state": "WA",
+            "present": false
+          },
+          {
+            "pattern": "NT",
+            "state": "TAS",
+            "present": false
+          },
+          {
+            "pattern": "NT",
+            "state": "NT",
+            "present": true
+          },
+          {
+            "pattern": "NT",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "VIC",
+            "state": "NSW",
+            "present": false
+          },
+          {
+            "pattern": "VIC",
+            "state": "VIC",
+            "present": true
+          },
+          {
+            "pattern": "VIC",
+            "state": "QLD",
+            "present": false
+          },
+          {
+            "pattern": "VIC",
+            "state": "SA",
+            "present": false
+          },
+          {
+            "pattern": "VIC",
+            "state": "WA",
+            "present": false
+          },
+          {
+            "pattern": "VIC",
+            "state": "TAS",
+            "present": false
+          },
+          {
+            "pattern": "VIC",
+            "state": "NT",
+            "present": false
+          },
+          {
+            "pattern": "VIC",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS",
+            "state": "NSW",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS",
+            "state": "VIC",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS",
+            "state": "QLD",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS",
+            "state": "SA",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS",
+            "state": "WA",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS",
+            "state": "TAS",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS",
+            "state": "NT",
+            "present": false
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "state": "NSW",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "state": "VIC",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "state": "QLD",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "state": "SA",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "state": "WA",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "state": "TAS",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "state": "NT",
+            "present": true
+          },
+          {
+            "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "state": "ACT",
+            "present": false
+          },
+          {
+            "pattern": "QLD+WA+NT",
+            "state": "NSW",
+            "present": false
+          },
+          {
+            "pattern": "QLD+WA+NT",
+            "state": "VIC",
+            "present": false
+          },
+          {
+            "pattern": "QLD+WA+NT",
+            "state": "QLD",
+            "present": true
+          },
+          {
+            "pattern": "QLD+WA+NT",
+            "state": "SA",
+            "present": false
+          },
+          {
+            "pattern": "QLD+WA+NT",
+            "state": "WA",
+            "present": true
+          },
+          {
+            "pattern": "QLD+WA+NT",
+            "state": "TAS",
+            "present": false
+          },
+          {
+            "pattern": "QLD+WA+NT",
+            "state": "NT",
+            "present": true
+          },
+          {
+            "pattern": "QLD+WA+NT",
+            "state": "ACT",
+            "present": false
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 65
+      },
+      "encoding": {
+        "x": {
+          "field": "pattern",
+          "type": "nominal",
+          "sort": [
+            "QLD",
+            "WA",
+            "NSW",
+            "TAS",
+            "NSW+QLD",
+            "SA",
+            "External only",
+            "NT",
+            "VIC",
+            "NSW+VIC+QLD+SA+WA+TAS",
+            "NSW+VIC+QLD+SA+WA+TAS+NT",
+            "QLD+WA+NT"
+          ],
+          "axis": {
+            "labelAngle": -40,
+            "labelLimit": 85,
+            "title": null
+          }
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": [
+            "NSW",
+            "VIC",
+            "QLD",
+            "SA",
+            "WA",
+            "TAS",
+            "NT",
+            "ACT"
+          ],
+          "title": null
+        },
+        "color": {
+          "field": "present",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              true,
+              false
+            ],
+            "range": [
+              "#2b7566",
+              "#dce5dc"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "pattern",
+            "type": "nominal",
+            "title": "State flags"
+          },
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "present",
+            "type": "nominal",
+            "title": "Flagged"
+          }
+        ]
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "x": "shared"
+    }
+  }
+}

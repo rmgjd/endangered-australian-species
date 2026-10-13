@@ -1,0 +1,92 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Indicative EPBC bird and mammal listing counts by state",
+  "width": "container",
+  "height": 260,
+  "background": null,
+  "padding": 8,
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "gridColor": "#dce7de",
+      "domainColor": "#8fa59b",
+      "tickColor": "#8fa59b",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "labelFontSize": 11
+    }
+  },
+  "data": {
+    "url": "data/state_group_counts.json"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "count",
+      "type": "quantitative",
+      "title": "Listed entries flagged in state"
+    },
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": [
+        "NSW",
+        "QLD",
+        "WA",
+        "VIC",
+        "SA",
+        "TAS",
+        "NT",
+        "ACT"
+      ],
+      "title": null
+    },
+    "yOffset": {
+      "field": "group"
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Birds",
+          "Mammals"
+        ],
+        "range": [
+          "#39798a",
+          "#b46145"
+        ]
+      },
+      "title": "Group"
+    },
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal",
+        "title": "State"
+      },
+      {
+        "field": "group",
+        "type": "nominal",
+        "title": "Group"
+      },
+      {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Entries"
+      }
+    ]
+  }
+}

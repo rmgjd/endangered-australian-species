@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Threatened bird relative abundance decline by jurisdiction, 2000 to 2022",
+  "width": "container",
+  "height": 340,
+  "background": null,
+  "padding": 8,
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "gridColor": "#dce7de",
+      "domainColor": "#8fa59b",
+      "tickColor": "#8fa59b",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "labelFontSize": 11
+    }
+  },
+  "projection": {
+    "type": "equalEarth"
+  },
+  "data": {
+    "url": "data/states_with_trends.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "color": {
+      "field": "properties.decline_pct",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "orangered",
+        "domain": [
+          30,
+          75
+        ]
+      },
+      "title": "Bird decline %"
+    },
+    "tooltip": [
+      {
+        "field": "properties.name",
+        "type": "nominal",
+        "title": "State"
+      },
+      {
+        "field": "properties.decline_pct",
+        "type": "quantitative",
+        "title": "Bird decline %"
+      },
+      {
+        "field": "properties.bird_taxa",
+        "type": "quantitative",
+        "title": "Monitored bird taxa"
+      }
+    ]
+  }
+}

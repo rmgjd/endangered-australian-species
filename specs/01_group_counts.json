@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Number of currently listed threatened fauna entries by animal group",
+  "width": "container",
+  "height": 255,
+  "background": null,
+  "padding": 8,
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "gridColor": "#dce7de",
+      "domainColor": "#8fa59b",
+      "tickColor": "#8fa59b",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "labelFontSize": 11
+    }
+  },
+  "data": {
+    "url": "data/group_totals.json"
+  },
+  "mark": {
+    "type": "bar",
+    "color": "#2b7566",
+    "cornerRadiusEnd": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "count",
+      "type": "quantitative",
+      "title": "EPBC listed entries"
+    },
+    "y": {
+      "field": "group",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "tooltip": [
+      {
+        "field": "group",
+        "type": "nominal",
+        "title": "Group"
+      },
+      {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Entries"
+      }
+    ]
+  }
+}

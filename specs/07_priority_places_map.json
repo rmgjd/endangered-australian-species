@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Locations of the 20 Threatened Species Action Plan priority places",
+  "width": "container",
+  "height": 340,
+  "background": null,
+  "padding": 8,
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "gridColor": "#dce7de",
+      "domainColor": "#8fa59b",
+      "tickColor": "#8fa59b",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "labelFontSize": 11
+    }
+  },
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#edf1e7",
+        "stroke": "#c5d4c9",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "data/priority_places.json"
+      },
+      "mark": {
+        "type": "circle",
+        "size": 92,
+        "color": "#a53935",
+        "opacity": 0.9,
+        "stroke": "#fff",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "type": "nominal",
+            "title": "Priority place"
+          },
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          }
+        ]
+      }
+    }
+  ]
+}

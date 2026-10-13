@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "EPBC conservation status by animal group",
+  "width": "container",
+  "height": 250,
+  "background": null,
+  "padding": 8,
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "gridColor": "#dce7de",
+      "domainColor": "#8fa59b",
+      "tickColor": "#8fa59b",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "labelFontSize": 11
+    }
+  },
+  "data": {
+    "url": "data/status_matrix.json"
+  },
+  "mark": {
+    "type": "rect",
+    "stroke": "#fff",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "status",
+      "type": "nominal",
+      "sort": [
+        "Critically Endangered",
+        "Endangered",
+        "Vulnerable"
+      ],
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "labelExpr": "datum.label === 'Critically Endangered' ? 'Critical' : datum.label"
+      }
+    },
+    "y": {
+      "field": "group",
+      "type": "nominal",
+      "sort": [
+        "Birds",
+        "Mammals",
+        "Reptiles",
+        "Amphibians",
+        "Fish",
+        "Invertebrates"
+      ],
+      "title": null
+    },
+    "color": {
+      "field": "count",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "orangered"
+      },
+      "title": "Entries"
+    },
+    "tooltip": [
+      {
+        "field": "group",
+        "type": "nominal",
+        "title": "Group"
+      },
+      {
+        "field": "status",
+        "type": "nominal",
+        "title": "Status"
+      },
+      {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Entries"
+      }
+    ]
+  }
+}

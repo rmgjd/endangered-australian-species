@@ -1,0 +1,190 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Treemap of nationally threatened fauna by animal group",
+  "width": "container",
+  "height": 275,
+  "background": null,
+  "padding": 8,
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "gridColor": "#dce7de",
+      "domainColor": "#8fa59b",
+      "tickColor": "#8fa59b",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "labelFontSize": 11
+    }
+  },
+  "data": {
+    "values": [
+      {
+        "group": "Birds",
+        "count": 164,
+        "x0": 0,
+        "x1": 0.624,
+        "y0": 0,
+        "y1": 0.4205128205128205,
+        "cx": 0.312,
+        "cy": 0.21025641025641026
+      },
+      {
+        "group": "Mammals",
+        "count": 113,
+        "x0": 0,
+        "x1": 0.624,
+        "y0": 0.4205128205128205,
+        "y1": 0.7102564102564103,
+        "cx": 0.312,
+        "cy": 0.5653846153846154
+      },
+      {
+        "group": "Invertebrates",
+        "count": 113,
+        "x0": 0,
+        "x1": 0.624,
+        "y0": 0.7102564102564103,
+        "y1": 1,
+        "cx": 0.312,
+        "cy": 0.8551282051282052
+      },
+      {
+        "group": "Reptiles",
+        "count": 103,
+        "x0": 0.624,
+        "x1": 1,
+        "y0": 0,
+        "y1": 0.4382978723404255,
+        "cx": 0.812,
+        "cy": 0.21914893617021275
+      },
+      {
+        "group": "Fish",
+        "count": 83,
+        "x0": 0.624,
+        "x1": 1,
+        "y0": 0.4382978723404255,
+        "y1": 0.7914893617021277,
+        "cx": 0.812,
+        "cy": 0.6148936170212767
+      },
+      {
+        "group": "Amphibians",
+        "count": 49,
+        "x0": 0.624,
+        "x1": 1,
+        "y0": 0.7914893617021277,
+        "y1": 1,
+        "cx": 0.812,
+        "cy": 0.8957446808510638
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "y2": {
+          "field": "y1"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Birds",
+              "Mammals",
+              "Reptiles",
+              "Amphibians",
+              "Fish",
+              "Invertebrates"
+            ],
+            "range": [
+              "#326f5d",
+              "#568d75",
+              "#8eaa74",
+              "#b0b978",
+              "#658f9a",
+              "#a0ad9a"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Group"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Entries"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "color": "#fff",
+        "fontWeight": "bold",
+        "fontSize": 13
+      },
+      "encoding": {
+        "x": {
+          "field": "cx",
+          "type": "quantitative",
+          "axis": null
+        },
+        "y": {
+          "field": "cy",
+          "type": "quantitative",
+          "axis": null
+        },
+        "text": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,731 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "The 2025 TSX holds time-series data for 49 of 110 national priority species",
+  "width": "container",
+  "height": 155,
+  "background": null,
+  "padding": 8,
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "gridColor": "#dce7de",
+      "domainColor": "#8fa59b",
+      "tickColor": "#8fa59b",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "labelFontSize": 11
+    }
+  },
+  "data": {
+    "values": [
+      {
+        "x": 0,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 1,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 2,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 6,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 7,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 8,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 9,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 10,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 11,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 12,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 13,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 14,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 15,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 16,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 17,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 18,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 19,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 20,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 21,
+        "y": 0,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 0,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 5,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 6,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 7,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 8,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 9,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 10,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 11,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 12,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 13,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 14,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 15,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 16,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 17,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 18,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 19,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 20,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 21,
+        "y": 1,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 1,
+        "y": 2,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "covered": true,
+        "label": "In TSX monitoring"
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 6,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 7,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 8,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 9,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 10,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 11,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 12,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 13,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 14,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 15,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 16,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 17,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 18,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 19,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 20,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 21,
+        "y": 2,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 6,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 7,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 8,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 9,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 10,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 11,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 12,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 13,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 14,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 15,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 16,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 17,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 18,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 19,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 20,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 21,
+        "y": 3,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 0,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 3,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 4,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 5,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 7,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 8,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 9,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 10,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 11,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 12,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 13,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 14,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 15,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 16,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 17,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 18,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 19,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 20,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      },
+      {
+        "x": 21,
+        "y": 4,
+        "covered": false,
+        "label": "No TSX time series"
+      }
+    ]
+  },
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "y",
+      "type": "ordinal",
+      "axis": null
+    },
+    "color": {
+      "field": "covered",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          true,
+          false
+        ],
+        "range": [
+          "#2b7566",
+          "#dbe5da"
+        ]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "label",
+        "type": "nominal",
+        "title": "Monitoring"
+      }
+    ]
+  }
+}
