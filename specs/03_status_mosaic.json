@@ -16,248 +16,313 @@
       "gridColor": "#dce7de",
       "domainColor": "#8fa59b",
       "tickColor": "#8fa59b",
-      "labelFontSize": 11,
+      "labelFontSize": 12,
       "titleFontSize": 12
     },
     "legend": {
       "labelColor": "#18302b",
       "titleColor": "#18302b",
-      "labelFontSize": 11
+      "labelFontSize": 12,
+      "orient": "bottom"
     }
   },
-  "data": {
-    "values": [
-      {
-        "group": "Birds",
-        "status": "Critically Endangered",
-        "count": 18,
-        "x0": 0,
-        "x1": 0.2624,
-        "y0": 0,
-        "y1": 0.10975609756097561
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "group": "Birds",
+            "status": "Critically Endangered",
+            "count": 18,
+            "x0": 0,
+            "x1": 0.2624,
+            "y0": 0,
+            "y1": 0.10975609756097561
+          },
+          {
+            "group": "Birds",
+            "status": "Endangered",
+            "count": 70,
+            "x0": 0,
+            "x1": 0.2624,
+            "y0": 0.10975609756097561,
+            "y1": 0.5365853658536586
+          },
+          {
+            "group": "Birds",
+            "status": "Vulnerable",
+            "count": 76,
+            "x0": 0,
+            "x1": 0.2624,
+            "y0": 0.5365853658536586,
+            "y1": 1.0
+          },
+          {
+            "group": "Mammals",
+            "status": "Critically Endangered",
+            "count": 9,
+            "x0": 0.2624,
+            "x1": 0.44320000000000004,
+            "y0": 0,
+            "y1": 0.07964601769911504
+          },
+          {
+            "group": "Mammals",
+            "status": "Endangered",
+            "count": 47,
+            "x0": 0.2624,
+            "x1": 0.44320000000000004,
+            "y0": 0.07964601769911504,
+            "y1": 0.49557522123893805
+          },
+          {
+            "group": "Mammals",
+            "status": "Vulnerable",
+            "count": 57,
+            "x0": 0.2624,
+            "x1": 0.44320000000000004,
+            "y0": 0.49557522123893805,
+            "y1": 1.0
+          },
+          {
+            "group": "Reptiles",
+            "status": "Critically Endangered",
+            "count": 27,
+            "x0": 0.44320000000000004,
+            "x1": 0.6080000000000001,
+            "y0": 0,
+            "y1": 0.2621359223300971
+          },
+          {
+            "group": "Reptiles",
+            "status": "Endangered",
+            "count": 42,
+            "x0": 0.44320000000000004,
+            "x1": 0.6080000000000001,
+            "y0": 0.2621359223300971,
+            "y1": 0.6699029126213591
+          },
+          {
+            "group": "Reptiles",
+            "status": "Vulnerable",
+            "count": 34,
+            "x0": 0.44320000000000004,
+            "x1": 0.6080000000000001,
+            "y0": 0.6699029126213591,
+            "y1": 1.0
+          },
+          {
+            "group": "Amphibians",
+            "status": "Critically Endangered",
+            "count": 18,
+            "x0": 0.6080000000000001,
+            "x1": 0.6864000000000001,
+            "y0": 0,
+            "y1": 0.3673469387755102
+          },
+          {
+            "group": "Amphibians",
+            "status": "Endangered",
+            "count": 15,
+            "x0": 0.6080000000000001,
+            "x1": 0.6864000000000001,
+            "y0": 0.3673469387755102,
+            "y1": 0.6734693877551021
+          },
+          {
+            "group": "Amphibians",
+            "status": "Vulnerable",
+            "count": 16,
+            "x0": 0.6080000000000001,
+            "x1": 0.6864000000000001,
+            "y0": 0.6734693877551021,
+            "y1": 1.0
+          },
+          {
+            "group": "Fish",
+            "status": "Critically Endangered",
+            "count": 28,
+            "x0": 0.6864000000000001,
+            "x1": 0.8192000000000002,
+            "y0": 0,
+            "y1": 0.3373493975903614
+          },
+          {
+            "group": "Fish",
+            "status": "Endangered",
+            "count": 33,
+            "x0": 0.6864000000000001,
+            "x1": 0.8192000000000002,
+            "y0": 0.3373493975903614,
+            "y1": 0.7349397590361446
+          },
+          {
+            "group": "Fish",
+            "status": "Vulnerable",
+            "count": 22,
+            "x0": 0.6864000000000001,
+            "x1": 0.8192000000000002,
+            "y0": 0.7349397590361446,
+            "y1": 1.0
+          },
+          {
+            "group": "Invertebrates",
+            "status": "Critically Endangered",
+            "count": 49,
+            "x0": 0.8192000000000002,
+            "x1": 1.0000000000000002,
+            "y0": 0,
+            "y1": 0.4336283185840708
+          },
+          {
+            "group": "Invertebrates",
+            "status": "Endangered",
+            "count": 48,
+            "x0": 0.8192000000000002,
+            "x1": 1.0000000000000002,
+            "y0": 0.4336283185840708,
+            "y1": 0.8584070796460177
+          },
+          {
+            "group": "Invertebrates",
+            "status": "Vulnerable",
+            "count": 16,
+            "x0": 0.8192000000000002,
+            "x1": 1.0000000000000002,
+            "y0": 0.8584070796460177,
+            "y1": 1.0
+          }
+        ]
       },
-      {
-        "group": "Birds",
-        "status": "Endangered",
-        "count": 70,
-        "x0": 0,
-        "x1": 0.2624,
-        "y0": 0.10975609756097561,
-        "y1": 0.5365853658536586
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 2
       },
-      {
-        "group": "Birds",
-        "status": "Vulnerable",
-        "count": 76,
-        "x0": 0,
-        "x1": 0.2624,
-        "y0": 0.5365853658536586,
-        "y1": 1.0
-      },
-      {
-        "group": "Mammals",
-        "status": "Critically Endangered",
-        "count": 9,
-        "x0": 0.2624,
-        "x1": 0.44320000000000004,
-        "y0": 0,
-        "y1": 0.07964601769911504
-      },
-      {
-        "group": "Mammals",
-        "status": "Endangered",
-        "count": 47,
-        "x0": 0.2624,
-        "x1": 0.44320000000000004,
-        "y0": 0.07964601769911504,
-        "y1": 0.49557522123893805
-      },
-      {
-        "group": "Mammals",
-        "status": "Vulnerable",
-        "count": 57,
-        "x0": 0.2624,
-        "x1": 0.44320000000000004,
-        "y0": 0.49557522123893805,
-        "y1": 1.0
-      },
-      {
-        "group": "Reptiles",
-        "status": "Critically Endangered",
-        "count": 27,
-        "x0": 0.44320000000000004,
-        "x1": 0.6080000000000001,
-        "y0": 0,
-        "y1": 0.2621359223300971
-      },
-      {
-        "group": "Reptiles",
-        "status": "Endangered",
-        "count": 42,
-        "x0": 0.44320000000000004,
-        "x1": 0.6080000000000001,
-        "y0": 0.2621359223300971,
-        "y1": 0.6699029126213591
-      },
-      {
-        "group": "Reptiles",
-        "status": "Vulnerable",
-        "count": 34,
-        "x0": 0.44320000000000004,
-        "x1": 0.6080000000000001,
-        "y0": 0.6699029126213591,
-        "y1": 1.0
-      },
-      {
-        "group": "Amphibians",
-        "status": "Critically Endangered",
-        "count": 18,
-        "x0": 0.6080000000000001,
-        "x1": 0.6864000000000001,
-        "y0": 0,
-        "y1": 0.3673469387755102
-      },
-      {
-        "group": "Amphibians",
-        "status": "Endangered",
-        "count": 15,
-        "x0": 0.6080000000000001,
-        "x1": 0.6864000000000001,
-        "y0": 0.3673469387755102,
-        "y1": 0.6734693877551021
-      },
-      {
-        "group": "Amphibians",
-        "status": "Vulnerable",
-        "count": 16,
-        "x0": 0.6080000000000001,
-        "x1": 0.6864000000000001,
-        "y0": 0.6734693877551021,
-        "y1": 1.0
-      },
-      {
-        "group": "Fish",
-        "status": "Critically Endangered",
-        "count": 28,
-        "x0": 0.6864000000000001,
-        "x1": 0.8192000000000002,
-        "y0": 0,
-        "y1": 0.3373493975903614
-      },
-      {
-        "group": "Fish",
-        "status": "Endangered",
-        "count": 33,
-        "x0": 0.6864000000000001,
-        "x1": 0.8192000000000002,
-        "y0": 0.3373493975903614,
-        "y1": 0.7349397590361446
-      },
-      {
-        "group": "Fish",
-        "status": "Vulnerable",
-        "count": 22,
-        "x0": 0.6864000000000001,
-        "x1": 0.8192000000000002,
-        "y0": 0.7349397590361446,
-        "y1": 1.0
-      },
-      {
-        "group": "Invertebrates",
-        "status": "Critically Endangered",
-        "count": 49,
-        "x0": 0.8192000000000002,
-        "x1": 1.0000000000000002,
-        "y0": 0,
-        "y1": 0.4336283185840708
-      },
-      {
-        "group": "Invertebrates",
-        "status": "Endangered",
-        "count": 48,
-        "x0": 0.8192000000000002,
-        "x1": 1.0000000000000002,
-        "y0": 0.4336283185840708,
-        "y1": 0.8584070796460177
-      },
-      {
-        "group": "Invertebrates",
-        "status": "Vulnerable",
-        "count": 16,
-        "x0": 0.8192000000000002,
-        "x1": 1.0000000000000002,
-        "y0": 0.8584070796460177,
-        "y1": 1.0
-      }
-    ]
-  },
-  "mark": {
-    "type": "rect",
-    "stroke": "white",
-    "strokeWidth": 2
-  },
-  "encoding": {
-    "x": {
-      "field": "x0",
-      "type": "quantitative",
-      "axis": null,
-      "scale": {
-        "domain": [
-          0,
-          1
+      "encoding": {
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "y2": {
+          "field": "y1"
+        },
+        "color": {
+          "field": "status",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Critically Endangered",
+              "Endangered",
+              "Vulnerable"
+            ],
+            "range": [
+              "#a53935",
+              "#d88340",
+              "#e6b75a"
+            ]
+          },
+          "title": "EPBC status",
+          "legend": {
+            "orient": "bottom",
+            "columns": 1
+          }
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Group"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Status"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Entries"
+          }
         ]
       }
     },
-    "x2": {
-      "field": "x1"
-    },
-    "y": {
-      "field": "y0",
-      "type": "quantitative",
-      "axis": null,
-      "scale": {
-        "domain": [
-          0,
-          1
-        ]
-      }
-    },
-    "y2": {
-      "field": "y1"
-    },
-    "color": {
-      "field": "status",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "Critically Endangered",
-          "Endangered",
-          "Vulnerable"
-        ],
-        "range": [
-          "#a53935",
-          "#d88340",
-          "#e6b75a"
+    {
+      "data": {
+        "values": [
+          {
+            "cx": 0.1312,
+            "label": "Birds"
+          },
+          {
+            "cx": 0.3528,
+            "label": "Mammals"
+          },
+          {
+            "cx": 0.5256000000000001,
+            "label": "Reptiles"
+          },
+          {
+            "cx": 0.6472000000000001,
+            "label": "Amphib."
+          },
+          {
+            "cx": 0.7528000000000001,
+            "label": "Fish"
+          },
+          {
+            "cx": 0.9096000000000002,
+            "label": "Inverts."
+          }
         ]
       },
-      "title": "EPBC status"
-    },
-    "tooltip": [
-      {
-        "field": "group",
-        "type": "nominal",
-        "title": "Group"
+      "mark": {
+        "type": "text",
+        "baseline": "bottom",
+        "dy": -8,
+        "fontSize": 11,
+        "color": "#18302b"
       },
-      {
-        "field": "status",
-        "type": "nominal",
-        "title": "Status"
-      },
-      {
-        "field": "count",
-        "type": "quantitative",
-        "title": "Entries"
+      "encoding": {
+        "x": {
+          "field": "cx",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "y": {
+          "value": 0
+        },
+        "text": {
+          "field": "label"
+        }
       }
-    ]
-  }
+    }
+  ]
 }

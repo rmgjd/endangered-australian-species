@@ -16,13 +16,14 @@
       "gridColor": "#dce7de",
       "domainColor": "#8fa59b",
       "tickColor": "#8fa59b",
-      "labelFontSize": 11,
+      "labelFontSize": 12,
       "titleFontSize": 12
     },
     "legend": {
       "labelColor": "#18302b",
       "titleColor": "#18302b",
-      "labelFontSize": 11
+      "labelFontSize": 12,
+      "orient": "bottom"
     }
   },
   "data": {
@@ -165,9 +166,9 @@
     {
       "mark": {
         "type": "text",
-        "color": "#fff",
+        "color": "#18302b",
         "fontWeight": "bold",
-        "fontSize": 13
+        "fontSize": 12
       },
       "encoding": {
         "x": {
@@ -183,6 +184,13 @@
         "text": {
           "field": "group",
           "type": "nominal"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.group === 'Birds' || datum.group === 'Mammals'",
+            "value": "#fff"
+          },
+          "value": "#18302b"
         }
       }
     }

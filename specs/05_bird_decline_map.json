@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Threatened bird relative abundance decline by jurisdiction, 2000 to 2022",
   "width": "container",
-  "height": 340,
+  "height": 440,
   "background": null,
   "padding": 8,
   "config": {
@@ -16,64 +16,116 @@
       "gridColor": "#dce7de",
       "domainColor": "#8fa59b",
       "tickColor": "#8fa59b",
-      "labelFontSize": 11,
+      "labelFontSize": 12,
       "titleFontSize": 12
     },
     "legend": {
       "labelColor": "#18302b",
       "titleColor": "#18302b",
-      "labelFontSize": 11
+      "labelFontSize": 12,
+      "orient": "bottom"
     }
   },
   "projection": {
-    "type": "equalEarth",
+    "type": "conicEqualArea",
     "rotate": [
       -134,
       0,
       0
+    ],
+    "center": [
+      0,
+      -28
+    ],
+    "parallels": [
+      -18,
+      -36
     ]
   },
-  "data": {
-    "url": "data/states_with_trends.geojson",
-    "format": {
-      "type": "json",
-      "property": "features"
-    }
-  },
-  "mark": {
-    "type": "geoshape",
-    "stroke": "white",
-    "strokeWidth": 1
-  },
-  "encoding": {
-    "color": {
-      "field": "properties.decline_pct",
-      "type": "quantitative",
-      "scale": {
-        "scheme": "orangered",
-        "domain": [
-          30,
-          75
+  "layer": [
+    {
+      "data": {
+        "url": "data/states_with_trends.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "color": {
+          "field": "properties.decline_pct",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "orangered",
+            "domain": [
+              30,
+              75
+            ]
+          },
+          "title": "Bird decline %",
+          "legend": {
+            "orient": "right",
+            "gradientLength": 220
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.name",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "properties.decline_pct",
+            "type": "quantitative",
+            "title": "Bird decline %"
+          },
+          {
+            "field": "properties.bird_taxa",
+            "type": "quantitative",
+            "title": "Monitored bird taxa"
+          }
         ]
-      },
-      "title": "Bird decline %"
-    },
-    "tooltip": [
-      {
-        "field": "properties.name",
-        "type": "nominal",
-        "title": "State"
-      },
-      {
-        "field": "properties.decline_pct",
-        "type": "quantitative",
-        "title": "Bird decline %"
-      },
-      {
-        "field": "properties.bird_taxa",
-        "type": "quantitative",
-        "title": "Monitored bird taxa"
       }
-    ]
-  }
+    },
+    {
+      "data": {
+        "url": "data/state_centres.json"
+      },
+      "transform": [
+        {
+          "filter": "datum.state !== 'ACT'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.state === 'SA' || datum.state === 'QLD'",
+            "value": "#fff"
+          },
+          "value": "#18302b"
+        }
+      }
+    }
+  ]
 }

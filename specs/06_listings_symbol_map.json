@@ -16,21 +16,30 @@
       "gridColor": "#dce7de",
       "domainColor": "#8fa59b",
       "tickColor": "#8fa59b",
-      "labelFontSize": 11,
+      "labelFontSize": 12,
       "titleFontSize": 12
     },
     "legend": {
       "labelColor": "#18302b",
       "titleColor": "#18302b",
-      "labelFontSize": 11
+      "labelFontSize": 12,
+      "orient": "bottom"
     }
   },
   "projection": {
-    "type": "equalEarth",
+    "type": "conicEqualArea",
     "rotate": [
       -134,
       0,
       0
+    ],
+    "center": [
+      0,
+      -28
+    ],
+    "parallels": [
+      -18,
+      -36
     ]
   },
   "layer": [
@@ -76,8 +85,17 @@
             "zero": true,
             "range": [
               0,
-              1700
+              1250
             ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "values": [
+              50,
+              150,
+              250
+            ],
+            "direction": "horizontal"
           },
           "title": "Listed entries"
         },
@@ -93,6 +111,36 @@
             "title": "Listed entries"
           }
         ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_centres.json"
+      },
+      "mark": {
+        "type": "text",
+        "dy": -25,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#18302b"
+      },
+      "transform": [
+        {
+          "filter": "datum.state !== 'ACT' && datum.state !== 'VIC'"
+        }
+      ],
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        }
       }
     }
   ]

@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "The 2025 TSX holds time-series data for 49 of 110 national priority species",
-  "width": "container",
-  "height": 155,
+  "width": 440,
+  "height": 100,
   "background": null,
   "padding": 8,
   "config": {
@@ -16,13 +16,14 @@
       "gridColor": "#dce7de",
       "domainColor": "#8fa59b",
       "tickColor": "#8fa59b",
-      "labelFontSize": 11,
+      "labelFontSize": 12,
       "titleFontSize": 12
     },
     "legend": {
       "labelColor": "#18302b",
       "titleColor": "#18302b",
-      "labelFontSize": 11
+      "labelFontSize": 12,
+      "orient": "bottom"
     }
   },
   "data": {

@@ -16,21 +16,30 @@
       "gridColor": "#dce7de",
       "domainColor": "#8fa59b",
       "tickColor": "#8fa59b",
-      "labelFontSize": 11,
+      "labelFontSize": 12,
       "titleFontSize": 12
     },
     "legend": {
       "labelColor": "#18302b",
       "titleColor": "#18302b",
-      "labelFontSize": 11
+      "labelFontSize": 12,
+      "orient": "bottom"
     }
   },
   "projection": {
-    "type": "equalEarth",
+    "type": "conicEqualArea",
     "rotate": [
       -134,
       0,
       0
+    ],
+    "center": [
+      0,
+      -28
+    ],
+    "parallels": [
+      -18,
+      -36
     ]
   },
   "layer": [
@@ -82,6 +91,35 @@
             "title": "State"
           }
         ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/priority_places.json"
+      },
+      "transform": [
+        {
+          "filter": "datum.state === 'External Territory'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": 16,
+        "fontSize": 10,
+        "color": "#18302b"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "name"
+        }
       }
     }
   ]

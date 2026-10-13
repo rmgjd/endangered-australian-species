@@ -14,13 +14,14 @@
       "gridColor": "#dce7de",
       "domainColor": "#8fa59b",
       "tickColor": "#8fa59b",
-      "labelFontSize": 11,
+      "labelFontSize": 12,
       "titleFontSize": 12
     },
     "legend": {
       "labelColor": "#18302b",
       "titleColor": "#18302b",
-      "labelFontSize": 11
+      "labelFontSize": 12,
+      "orient": "bottom"
     }
   },
   "vconcat": [
@@ -35,7 +36,8 @@
               "QLD"
             ],
             "count": 92,
-            "state_count": 1
+            "state_count": 1,
+            "rank": "1"
           },
           {
             "pattern": "WA",
@@ -43,7 +45,8 @@
               "WA"
             ],
             "count": 71,
-            "state_count": 1
+            "state_count": 1,
+            "rank": "2"
           },
           {
             "pattern": "NSW",
@@ -51,7 +54,8 @@
               "NSW"
             ],
             "count": 67,
-            "state_count": 1
+            "state_count": 1,
+            "rank": "3"
           },
           {
             "pattern": "TAS",
@@ -59,7 +63,8 @@
               "TAS"
             ],
             "count": 48,
-            "state_count": 1
+            "state_count": 1,
+            "rank": "4"
           },
           {
             "pattern": "NSW+QLD",
@@ -68,7 +73,8 @@
               "QLD"
             ],
             "count": 37,
-            "state_count": 2
+            "state_count": 2,
+            "rank": "5"
           },
           {
             "pattern": "SA",
@@ -76,13 +82,15 @@
               "SA"
             ],
             "count": 31,
-            "state_count": 1
+            "state_count": 1,
+            "rank": "6"
           },
           {
             "pattern": "External only",
             "states": [],
             "count": 25,
-            "state_count": 0
+            "state_count": 0,
+            "rank": "7"
           },
           {
             "pattern": "NT",
@@ -90,7 +98,8 @@
               "NT"
             ],
             "count": 24,
-            "state_count": 1
+            "state_count": 1,
+            "rank": "8"
           },
           {
             "pattern": "VIC",
@@ -98,7 +107,8 @@
               "VIC"
             ],
             "count": 22,
-            "state_count": 1
+            "state_count": 1,
+            "rank": "9"
           },
           {
             "pattern": "NSW+VIC+QLD+SA+WA+TAS",
@@ -111,7 +121,8 @@
               "TAS"
             ],
             "count": 19,
-            "state_count": 6
+            "state_count": 6,
+            "rank": "10"
           },
           {
             "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
@@ -125,7 +136,8 @@
               "NT"
             ],
             "count": 17,
-            "state_count": 7
+            "state_count": 7,
+            "rank": "11"
           },
           {
             "pattern": "QLD+WA+NT",
@@ -135,7 +147,8 @@
               "NT"
             ],
             "count": 14,
-            "state_count": 3
+            "state_count": 3,
+            "rank": "12"
           }
         ]
       },
@@ -145,21 +158,21 @@
       },
       "encoding": {
         "x": {
-          "field": "pattern",
+          "field": "rank",
           "type": "nominal",
           "sort": [
-            "QLD",
-            "WA",
-            "NSW",
-            "TAS",
-            "NSW+QLD",
-            "SA",
-            "External only",
-            "NT",
-            "VIC",
-            "NSW+VIC+QLD+SA+WA+TAS",
-            "NSW+VIC+QLD+SA+WA+TAS+NT",
-            "QLD+WA+NT"
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
           ],
           "axis": null
         },
@@ -184,517 +197,704 @@
     },
     {
       "width": "container",
-      "height": 120,
+      "height": 150,
       "data": {
         "values": [
           {
+            "rank": "1",
             "pattern": "QLD",
             "state": "NSW",
+            "state_order": 0,
             "present": false
           },
           {
+            "rank": "1",
             "pattern": "QLD",
             "state": "VIC",
+            "state_order": 1,
             "present": false
           },
           {
+            "rank": "1",
             "pattern": "QLD",
             "state": "QLD",
+            "state_order": 2,
             "present": true
           },
           {
+            "rank": "1",
             "pattern": "QLD",
             "state": "SA",
+            "state_order": 3,
             "present": false
           },
           {
+            "rank": "1",
             "pattern": "QLD",
             "state": "WA",
+            "state_order": 4,
             "present": false
           },
           {
+            "rank": "1",
             "pattern": "QLD",
             "state": "TAS",
+            "state_order": 5,
             "present": false
           },
           {
+            "rank": "1",
             "pattern": "QLD",
             "state": "NT",
+            "state_order": 6,
             "present": false
           },
           {
+            "rank": "1",
             "pattern": "QLD",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "2",
             "pattern": "WA",
             "state": "NSW",
+            "state_order": 0,
             "present": false
           },
           {
+            "rank": "2",
             "pattern": "WA",
             "state": "VIC",
+            "state_order": 1,
             "present": false
           },
           {
+            "rank": "2",
             "pattern": "WA",
             "state": "QLD",
+            "state_order": 2,
             "present": false
           },
           {
+            "rank": "2",
             "pattern": "WA",
             "state": "SA",
+            "state_order": 3,
             "present": false
           },
           {
+            "rank": "2",
             "pattern": "WA",
             "state": "WA",
+            "state_order": 4,
             "present": true
           },
           {
+            "rank": "2",
             "pattern": "WA",
             "state": "TAS",
+            "state_order": 5,
             "present": false
           },
           {
+            "rank": "2",
             "pattern": "WA",
             "state": "NT",
+            "state_order": 6,
             "present": false
           },
           {
+            "rank": "2",
             "pattern": "WA",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "3",
             "pattern": "NSW",
             "state": "NSW",
+            "state_order": 0,
             "present": true
           },
           {
+            "rank": "3",
             "pattern": "NSW",
             "state": "VIC",
+            "state_order": 1,
             "present": false
           },
           {
+            "rank": "3",
             "pattern": "NSW",
             "state": "QLD",
+            "state_order": 2,
             "present": false
           },
           {
+            "rank": "3",
             "pattern": "NSW",
             "state": "SA",
+            "state_order": 3,
             "present": false
           },
           {
+            "rank": "3",
             "pattern": "NSW",
             "state": "WA",
+            "state_order": 4,
             "present": false
           },
           {
+            "rank": "3",
             "pattern": "NSW",
             "state": "TAS",
+            "state_order": 5,
             "present": false
           },
           {
+            "rank": "3",
             "pattern": "NSW",
             "state": "NT",
+            "state_order": 6,
             "present": false
           },
           {
+            "rank": "3",
             "pattern": "NSW",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "4",
             "pattern": "TAS",
             "state": "NSW",
+            "state_order": 0,
             "present": false
           },
           {
+            "rank": "4",
             "pattern": "TAS",
             "state": "VIC",
+            "state_order": 1,
             "present": false
           },
           {
+            "rank": "4",
             "pattern": "TAS",
             "state": "QLD",
+            "state_order": 2,
             "present": false
           },
           {
+            "rank": "4",
             "pattern": "TAS",
             "state": "SA",
+            "state_order": 3,
             "present": false
           },
           {
+            "rank": "4",
             "pattern": "TAS",
             "state": "WA",
+            "state_order": 4,
             "present": false
           },
           {
+            "rank": "4",
             "pattern": "TAS",
             "state": "TAS",
+            "state_order": 5,
             "present": true
           },
           {
+            "rank": "4",
             "pattern": "TAS",
             "state": "NT",
+            "state_order": 6,
             "present": false
           },
           {
+            "rank": "4",
             "pattern": "TAS",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "5",
             "pattern": "NSW+QLD",
             "state": "NSW",
+            "state_order": 0,
             "present": true
           },
           {
+            "rank": "5",
             "pattern": "NSW+QLD",
             "state": "VIC",
+            "state_order": 1,
             "present": false
           },
           {
+            "rank": "5",
             "pattern": "NSW+QLD",
             "state": "QLD",
+            "state_order": 2,
             "present": true
           },
           {
+            "rank": "5",
             "pattern": "NSW+QLD",
             "state": "SA",
+            "state_order": 3,
             "present": false
           },
           {
+            "rank": "5",
             "pattern": "NSW+QLD",
             "state": "WA",
+            "state_order": 4,
             "present": false
           },
           {
+            "rank": "5",
             "pattern": "NSW+QLD",
             "state": "TAS",
+            "state_order": 5,
             "present": false
           },
           {
+            "rank": "5",
             "pattern": "NSW+QLD",
             "state": "NT",
+            "state_order": 6,
             "present": false
           },
           {
+            "rank": "5",
             "pattern": "NSW+QLD",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "6",
             "pattern": "SA",
             "state": "NSW",
+            "state_order": 0,
             "present": false
           },
           {
+            "rank": "6",
             "pattern": "SA",
             "state": "VIC",
+            "state_order": 1,
             "present": false
           },
           {
+            "rank": "6",
             "pattern": "SA",
             "state": "QLD",
+            "state_order": 2,
             "present": false
           },
           {
+            "rank": "6",
             "pattern": "SA",
             "state": "SA",
+            "state_order": 3,
             "present": true
           },
           {
+            "rank": "6",
             "pattern": "SA",
             "state": "WA",
+            "state_order": 4,
             "present": false
           },
           {
+            "rank": "6",
             "pattern": "SA",
             "state": "TAS",
+            "state_order": 5,
             "present": false
           },
           {
+            "rank": "6",
             "pattern": "SA",
             "state": "NT",
+            "state_order": 6,
             "present": false
           },
           {
+            "rank": "6",
             "pattern": "SA",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "7",
             "pattern": "External only",
             "state": "NSW",
+            "state_order": 0,
             "present": false
           },
           {
+            "rank": "7",
             "pattern": "External only",
             "state": "VIC",
+            "state_order": 1,
             "present": false
           },
           {
+            "rank": "7",
             "pattern": "External only",
             "state": "QLD",
+            "state_order": 2,
             "present": false
           },
           {
+            "rank": "7",
             "pattern": "External only",
             "state": "SA",
+            "state_order": 3,
             "present": false
           },
           {
+            "rank": "7",
             "pattern": "External only",
             "state": "WA",
+            "state_order": 4,
             "present": false
           },
           {
+            "rank": "7",
             "pattern": "External only",
             "state": "TAS",
+            "state_order": 5,
             "present": false
           },
           {
+            "rank": "7",
             "pattern": "External only",
             "state": "NT",
+            "state_order": 6,
             "present": false
           },
           {
+            "rank": "7",
             "pattern": "External only",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "8",
             "pattern": "NT",
             "state": "NSW",
+            "state_order": 0,
             "present": false
           },
           {
+            "rank": "8",
             "pattern": "NT",
             "state": "VIC",
+            "state_order": 1,
             "present": false
           },
           {
+            "rank": "8",
             "pattern": "NT",
             "state": "QLD",
+            "state_order": 2,
             "present": false
           },
           {
+            "rank": "8",
             "pattern": "NT",
             "state": "SA",
+            "state_order": 3,
             "present": false
           },
           {
+            "rank": "8",
             "pattern": "NT",
             "state": "WA",
+            "state_order": 4,
             "present": false
           },
           {
+            "rank": "8",
             "pattern": "NT",
             "state": "TAS",
+            "state_order": 5,
             "present": false
           },
           {
+            "rank": "8",
             "pattern": "NT",
             "state": "NT",
+            "state_order": 6,
             "present": true
           },
           {
+            "rank": "8",
             "pattern": "NT",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "9",
             "pattern": "VIC",
             "state": "NSW",
+            "state_order": 0,
             "present": false
           },
           {
+            "rank": "9",
             "pattern": "VIC",
             "state": "VIC",
+            "state_order": 1,
             "present": true
           },
           {
+            "rank": "9",
             "pattern": "VIC",
             "state": "QLD",
+            "state_order": 2,
             "present": false
           },
           {
+            "rank": "9",
             "pattern": "VIC",
             "state": "SA",
+            "state_order": 3,
             "present": false
           },
           {
+            "rank": "9",
             "pattern": "VIC",
             "state": "WA",
+            "state_order": 4,
             "present": false
           },
           {
+            "rank": "9",
             "pattern": "VIC",
             "state": "TAS",
+            "state_order": 5,
             "present": false
           },
           {
+            "rank": "9",
             "pattern": "VIC",
             "state": "NT",
+            "state_order": 6,
             "present": false
           },
           {
+            "rank": "9",
             "pattern": "VIC",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "10",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS",
             "state": "NSW",
+            "state_order": 0,
             "present": true
           },
           {
+            "rank": "10",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS",
             "state": "VIC",
+            "state_order": 1,
             "present": true
           },
           {
+            "rank": "10",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS",
             "state": "QLD",
+            "state_order": 2,
             "present": true
           },
           {
+            "rank": "10",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS",
             "state": "SA",
+            "state_order": 3,
             "present": true
           },
           {
+            "rank": "10",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS",
             "state": "WA",
+            "state_order": 4,
             "present": true
           },
           {
+            "rank": "10",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS",
             "state": "TAS",
+            "state_order": 5,
             "present": true
           },
           {
+            "rank": "10",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS",
             "state": "NT",
+            "state_order": 6,
             "present": false
           },
           {
+            "rank": "10",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "11",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
             "state": "NSW",
+            "state_order": 0,
             "present": true
           },
           {
+            "rank": "11",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
             "state": "VIC",
+            "state_order": 1,
             "present": true
           },
           {
+            "rank": "11",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
             "state": "QLD",
+            "state_order": 2,
             "present": true
           },
           {
+            "rank": "11",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
             "state": "SA",
+            "state_order": 3,
             "present": true
           },
           {
+            "rank": "11",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
             "state": "WA",
+            "state_order": 4,
             "present": true
           },
           {
+            "rank": "11",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
             "state": "TAS",
+            "state_order": 5,
             "present": true
           },
           {
+            "rank": "11",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
             "state": "NT",
+            "state_order": 6,
             "present": true
           },
           {
+            "rank": "11",
             "pattern": "NSW+VIC+QLD+SA+WA+TAS+NT",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           },
           {
+            "rank": "12",
             "pattern": "QLD+WA+NT",
             "state": "NSW",
+            "state_order": 0,
             "present": false
           },
           {
+            "rank": "12",
             "pattern": "QLD+WA+NT",
             "state": "VIC",
+            "state_order": 1,
             "present": false
           },
           {
+            "rank": "12",
             "pattern": "QLD+WA+NT",
             "state": "QLD",
+            "state_order": 2,
             "present": true
           },
           {
+            "rank": "12",
             "pattern": "QLD+WA+NT",
             "state": "SA",
+            "state_order": 3,
             "present": false
           },
           {
+            "rank": "12",
             "pattern": "QLD+WA+NT",
             "state": "WA",
+            "state_order": 4,
             "present": true
           },
           {
+            "rank": "12",
             "pattern": "QLD+WA+NT",
             "state": "TAS",
+            "state_order": 5,
             "present": false
           },
           {
+            "rank": "12",
             "pattern": "QLD+WA+NT",
             "state": "NT",
+            "state_order": 6,
             "present": true
           },
           {
+            "rank": "12",
             "pattern": "QLD+WA+NT",
             "state": "ACT",
+            "state_order": 7,
             "present": false
           }
         ]
       },
-      "mark": {
-        "type": "circle",
-        "size": 65
-      },
       "encoding": {
         "x": {
-          "field": "pattern",
+          "field": "rank",
           "type": "nominal",
           "sort": [
-            "QLD",
-            "WA",
-            "NSW",
-            "TAS",
-            "NSW+QLD",
-            "SA",
-            "External only",
-            "NT",
-            "VIC",
-            "NSW+VIC+QLD+SA+WA+TAS",
-            "NSW+VIC+QLD+SA+WA+TAS+NT",
-            "QLD+WA+NT"
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
           ],
           "axis": {
-            "labelAngle": -40,
-            "labelLimit": 85,
-            "title": null
+            "labelAngle": 0,
+            "title": "Combination rank"
           }
         },
         "y": {
@@ -711,40 +911,71 @@
             "ACT"
           ],
           "title": null
-        },
-        "color": {
-          "field": "present",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              true,
-              false
-            ],
-            "range": [
-              "#2b7566",
-              "#dce5dc"
-            ]
+        }
+      },
+      "layer": [
+        {
+          "transform": [
+            {
+              "filter": "datum.present"
+            }
+          ],
+          "mark": {
+            "type": "line",
+            "color": "#2b7566",
+            "strokeWidth": 2
           },
-          "legend": null
-        },
-        "tooltip": [
-          {
-            "field": "pattern",
-            "type": "nominal",
-            "title": "State flags"
-          },
-          {
-            "field": "state",
-            "type": "nominal",
-            "title": "State"
-          },
-          {
-            "field": "present",
-            "type": "nominal",
-            "title": "Flagged"
+          "encoding": {
+            "detail": {
+              "field": "rank"
+            },
+            "order": {
+              "field": "state_order",
+              "type": "quantitative"
+            }
           }
-        ]
-      }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "size": 65
+          },
+          "encoding": {
+            "color": {
+              "field": "present",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  true,
+                  false
+                ],
+                "range": [
+                  "#2b7566",
+                  "#dce5dc"
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "pattern",
+                "type": "nominal",
+                "title": "State flags"
+              },
+              {
+                "field": "state",
+                "type": "nominal",
+                "title": "State"
+              },
+              {
+                "field": "present",
+                "type": "nominal",
+                "title": "Flagged"
+              }
+            ]
+          }
+        }
+      ]
     }
   ],
   "resolve": {
