@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An evidence-led visual story about Australia's nationally threatened animals, monitored population trends, and conservation priorities.">
+  <title>Australia's threatened animals | FIT3179 DV2</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/vega@5/build/vega.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5/build/vega-lite.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6/build/vega-embed.min.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to story</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <span class="eyebrow">FIT3179 · Data Visualisation 2</span>
+      <nav aria-label="Story chapters"><a href="#listings">The list</a><a href="#place">The map</a><a href="#change">The trend</a><a href="#response">The response</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero wrap">
+      <p class="kicker">An Australian conservation story</p>
+      <h1>Australia's threatened animals</h1>
+      <p class="lede">The national list tells us <strong>which animals face extinction risk</strong>. Monitoring tells us <strong>how some populations are changing</strong>. Together, they reveal where the challenge is greatest—and where our evidence is still thin.</p>
+      <div class="hero-facts" aria-label="Key facts">
+        <div><strong>625</strong><span>living fauna entries nationally listed as Vulnerable, Endangered or Critically Endangered</span></div>
+        <div><strong>97%</strong><span>average relative abundance decline for 28 monitored amphibian taxa since 1985</span></div>
+        <div><strong>49 of 110</strong><span>national priority species with time-series data in the 2025 TSX</span></div>
+      </div>
+      <p class="scope">The first figure comes from the Australian Government's EPBC list extracted 28 August 2026. The monitoring figures come from the 2025 Threatened Species Index (TSX), whose data run through 2022. A listed entry may be a species or a subspecies. These measures have different coverage and should not be compared as if they describe the same sample.</p>
+    </section>
+
+    <section class="chapter" id="listings">
+      <div class="wrap">
+        <div class="chapter-head"><span class="chapter-no">01 / THE LIST</span><div><h2>Risk reaches every animal group</h2><p>The EPBC list is a snapshot of nationally recognised risk. Its categories describe extinction risk, not the number of animals alive.</p></div></div>
+        <div class="grid two">
+          <figure class="chart-card"><figcaption><span class="chart-no">01</span><h3>Birds have the most listed entries</h3><p>Six broad animal groups make the national list easier to scan.</p></figcaption><div id="chart-01" class="chart"></div><p class="chart-note">Source: EPBC threatened species state lists, 28 Aug 2026. Entries, not individual animals.</p><a class="spec-link" href="specs/01_group_counts.json">View Vega-Lite specification</a></figure>
+          <figure class="chart-card"><figcaption><span class="chart-no">02</span><h3>Severity differs within each group</h3><p>Darker cells contain more listed entries at that status.</p></figcaption><div id="chart-02" class="chart"></div><p class="chart-note">Counts include living entries in the three EPBC threatened categories.</p><a class="spec-link" href="specs/02_status_heatmap.json">View Vega-Lite specification</a></figure>
+        </div>
+        <div class="grid two">
+          <figure class="chart-card"><figcaption><span class="chart-no">03</span><h3>The mix matters as much as the total</h3><p>Width shows each group's share of all 625 entries; height shows its status mix.</p></figcaption><div id="chart-03" class="chart"></div><p class="chart-note">Read area as count. Hover to see the exact entry count.</p><a class="spec-link" href="specs/03_status_mosaic.json">View Vega-Lite specification</a></figure>
+          <figure class="chart-card"><figcaption><span class="chart-no">04</span><h3>Six groups, one shared area</h3><p>Each rectangle's area is proportional to the number of listed entries.</p></figcaption><div id="chart-04" class="chart"></div><p class="chart-note">A treemap supports a quick whole-to-part reading; chart 01 supports precise comparison.</p><a class="spec-link" href="specs/04_group_treemap.json">View Vega-Lite specification</a></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter shaded" id="place">
+      <div class="wrap">
+        <div class="chapter-head"><span class="chapter-no">02 / THE MAP</span><div><h2>Geography changes the story</h2><p>A map can show a rate, a quantity attached to a place, or a set of locations. These are different questions, so the three maps use different idioms.</p></div></div>
+        <figure class="chart-card wide"><figcaption><span class="chart-no">05 · CHOROPLETH</span><h3>Monitored birds declined in every jurisdiction</h3><p>Colour shows the TSX average change in relative bird abundance from 2000 to 2022. Darker means a larger decline.</p></figcaption><div id="chart-05" class="chart map"></div><p class="chart-note">NSW and ACT share one combined TSX estimate. The mapped sample is monitored threatened and near-threatened birds, not every EPBC-listed bird. Equal-area projection; Antarctica and external territories omitted.</p><a class="spec-link" href="specs/05_bird_decline_map.json">View Vega-Lite specification</a></figure>
+        <div class="grid two">
+          <figure class="chart-card"><figcaption><span class="chart-no">06 · PROPORTIONAL SYMBOLS</span><h3>Listed fauna cross state borders</h3><p>Circle area represents the number of EPBC threatened fauna entries flagged in each state.</p></figcaption><div id="chart-06" class="chart map"></div><p class="chart-note">Indicative occurrence flags are not a census or a state-specific conservation status. Species present in several states appear in several circles.</p><a class="spec-link" href="specs/06_listings_symbol_map.json">View Vega-Lite specification</a></figure>
+          <figure class="chart-card"><figcaption><span class="chart-no">07 · DOT MAP</span><h3>Twenty places focus national action</h3><p>Each dot marks one priority place in the Threatened Species Action Plan.</p></figcaption><div id="chart-07" class="chart map"></div><p class="chart-note">Dots show approximate positions derived from the official mapped polygons. Each dot is one place, regardless of size. Some priority places include ecological communities and plants.</p><a class="spec-link" href="specs/07_priority_places_map.json">View Vega-Lite specification</a></figure>
+        </div>
+        <figure class="chart-card wide"><figcaption><span class="chart-no">08 · SET INTERSECTIONS</span><h3>Some species span many jurisdictions; others appear in only one</h3><p>The bars rank the most common exact combinations of state occurrence flags; the dots show which states belong to each combination.</p></figcaption><div id="chart-08" class="chart"></div><p class="chart-note">Only the 12 largest exact flag patterns are displayed. This is list metadata, not measured range size or population abundance.</p><a class="spec-link" href="specs/08_state_intersections.json">View Vega-Lite specification</a></figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="change">
+      <div class="wrap">
+        <div class="chapter-head"><span class="chapter-no">03 / THE TREND</span><div><h2>Monitoring adds a harder measure</h2><p>The TSX brings repeated surveys together into an index of average relative abundance. It does not estimate how many animals are left.</p></div></div>
+        <div class="grid two">
+          <figure class="chart-card"><figcaption><span class="chart-no">09</span><h3>The monitored amphibian and reptile samples fell furthest</h3><p>Average relative abundance change from the 1985 reference year to 2022.</p></figcaption><div id="chart-09" class="chart"></div><p class="chart-note">TSX 2025: amphibians 28 taxa, reptiles 24, birds 73, mammals 92. The reptile index is a pilot and these samples do not cover all threatened taxa.</p><a class="spec-link" href="specs/09_monitored_declines.json">View Vega-Lite specification</a></figure>
+          <figure class="chart-card"><figcaption><span class="chart-no">11</span><h3>Bird and mammal listings vary across states</h3><p>Two aligned bars separate the groups behind each state's total.</p></figcaption><div id="chart-11" class="chart"></div><p class="chart-note">EPBC indicative occurrence, 28 Aug 2026. This shows where listed entries are flagged, not where monitoring detected population decline.</p><a class="spec-link" href="specs/11_birds_mammals_states.json">View Vega-Lite specification</a></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter shaded" id="response">
+      <div class="wrap">
+        <div class="chapter-head"><span class="chapter-no">04 / THE RESPONSE</span><div><h2>Recovery needs evidence as well as action</h2><p>Australia's plan targets 110 priority species and 20 priority places. Monitoring coverage remains incomplete, so activity and outcomes must be described separately.</p></div></div>
+        <figure class="chart-card wide"><figcaption><span class="chart-no">10 · UNIT CHART</span><h3>Fewer than half of the 110 priority species have TSX time-series data</h3><p>Each square represents one priority species. Dark squares represent the 49 covered in the 2025 TSX.</p></figcaption><div id="chart-10" class="chart"></div><p class="chart-note">Coverage does not mean recovery or decline. The 110 national priority species include plants as well as animals; the 49 monitored taxa include 9 birds, 15 mammals, 5 amphibians, 7 reptiles and 13 plants.</p><a class="spec-link" href="specs/10_priority_coverage.json">View Vega-Lite specification</a></figure>
+        <div class="case-heading"><span class="chart-no">THREE SPECIES · THREE KINDS OF CHALLENGE</span><h3>Risk has no single cause</h3><p>These examples show why a legal status alone cannot describe the work needed for recovery.</p></div>
+        <div class="cases">
+          <article><p class="case-group">FISH · ENDANGERED</p><h4>Maugean skate</h4><p>The only confirmed population lives in Macquarie Harbour, Tasmania. Low dissolved oxygen and degraded water quality are central challenges. Government action includes harbour oxygenation, captive management and monitoring.</p><a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/action-plan/priority-fish/maugean-skate">Species profile</a></article>
+          <article><p class="case-group">BIRD · CRITICALLY ENDANGERED</p><h4>Orange-bellied parrot</h4><p>This migratory bird needs habitat in both Tasmania and the mainland. The Action Plan identifies winter saltmarsh loss, small population size, altered fire and disease; actions include habitat work, nest boxes and captive breeding.</p><a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/action-plan/priority-birds/orange-bellied-parrot">Species profile</a></article>
+          <article><p class="case-group">MAMMAL · CRITICALLY ENDANGERED</p><h4>Northern hairy-nosed wombat</h4><p>A very small, restricted population faces habitat degradation, predators and genetic vulnerability. Priority work includes protected habitat, predator exclusion and establishing additional populations.</p><a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/action-plan/northern-hairy-nosed-wombat">Species profile</a></article>
+        </div>
+        <div class="closing"><h3>What the evidence supports</h3><p>National listing shows breadth of extinction risk across animal groups. The monitored TSX samples show major long-term declines, especially among amphibians and reptiles, while also exposing gaps in coverage. Priority places and species show where governments are directing effort. Whether those actions reverse declines needs continued, comparable monitoring.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-grid"><div><strong>Australia's threatened animals</strong><p>FIT3179 Data Visualisation 2 · 14 October 2026<br>Author: Tianyi Xiao</p><p>Generative AI assisted with research, data preparation, code and wording. The author must review and acknowledge its use in the final submission.</p></div><div><strong>Sources and methods</strong><ul><li><a href="https://data.gov.au/data/dataset/ae652011-f39e-4c6c-91b8-1dc2d2dfee8f">EPBC threatened species state lists</a>, extracted 28 Aug 2026</li><li><a href="https://tsx.org.au/wp-content/uploads/2025/11/Threatened_Species_Index_2025_Trend_Summary_20251125.pdf">Threatened Species Index 2025 Trend Summary</a></li><li><a href="https://geo.abs.gov.au/arcgis/rest/services/ASGS2026/STE/MapServer">ABS 2026 state and territory boundaries</a></li><li><a href="https://gis.environment.gov.au/gispub/rest/services/evv/Threatened_Species_Priority_Places/MapServer">Threatened Species Action Plan priority places GIS</a></li></ul><a href="METHODS.md">Read data and design methods</a></div></div></footer>
+</body>
+</html>
