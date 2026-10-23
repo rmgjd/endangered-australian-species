@@ -219,12 +219,18 @@
         "values": [
           {
             "lon": 148.999,
-            "lat": -35.494
+            "lat": -35.494,
+            "order": 0
+          },
+          {
+            "lon": 155,
+            "lat": -44,
+            "order": 1
           }
         ]
       },
       "mark": {
-        "type": "rule",
+        "type": "line",
         "strokeWidth": 1.1,
         "color": "#a53935"
       },
@@ -237,15 +243,8 @@
           "field": "lat",
           "type": "quantitative"
         },
-        "x2": {
-          "value": {
-            "expr": "width * .88"
-          }
-        },
-        "y2": {
-          "value": {
-            "expr": "height + 10"
-          }
+        "order": {
+          "field": "order"
         }
       }
     },
