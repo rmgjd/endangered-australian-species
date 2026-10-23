@@ -29,65 +29,99 @@
   "data": {
     "url": "data/state_group_counts.json"
   },
-  "mark": {
-    "type": "bar",
-    "cornerRadiusEnd": 2
-  },
-  "encoding": {
-    "x": {
-      "field": "count",
-      "type": "quantitative",
-      "title": "Listed entries flagged in state"
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "title": "Listed entries flagged in state"
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": [
+            "NSW",
+            "QLD",
+            "WA",
+            "VIC",
+            "SA",
+            "TAS",
+            "NT",
+            "ACT"
+          ],
+          "title": null
+        },
+        "yOffset": {
+          "field": "group"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Birds",
+              "Mammals"
+            ],
+            "range": [
+              "#39798a",
+              "#b46145"
+            ]
+          },
+          "title": "Group"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Group"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Entries"
+          }
+        ]
+      }
     },
-    "y": {
-      "field": "state",
-      "type": "nominal",
-      "sort": [
-        "NSW",
-        "QLD",
-        "WA",
-        "VIC",
-        "SA",
-        "TAS",
-        "NT",
-        "ACT"
-      ],
-      "title": null
-    },
-    "yOffset": {
-      "field": "group"
-    },
-    "color": {
-      "field": "group",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "Birds",
-          "Mammals"
-        ],
-        "range": [
-          "#39798a",
-          "#b46145"
+    {
+      "data": {
+        "values": [
+          {}
         ]
       },
-      "title": "Group"
-    },
-    "tooltip": [
-      {
-        "field": "state",
-        "type": "nominal",
-        "title": "State"
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#a53935"
       },
-      {
-        "field": "group",
-        "type": "nominal",
-        "title": "Group"
-      },
-      {
-        "field": "count",
-        "type": "quantitative",
-        "title": "Entries"
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width * 0.98"
+          }
+        },
+        "y": {
+          "value": -35
+        },
+        "text": {
+          "value": "Highest bird count: SA (85)\nHighest mammal count: QLD (49)"
+        }
       }
-    ]
-  }
+    }
+  ]
 }

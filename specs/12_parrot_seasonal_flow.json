@@ -1,0 +1,572 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Qualitative origin-destination flow map: seasonal regional connections of the orange-bellied parrot; not tracked flight paths or quantities",
+  "width": "container",
+  "height": 430,
+  "background": null,
+  "padding": 8,
+  "config": {
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "gridColor": "#dce7de",
+      "domainColor": "#8fa59b",
+      "tickColor": "#8fa59b",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelColor": "#18302b",
+      "titleColor": "#18302b",
+      "labelFontSize": 12,
+      "orient": "bottom"
+    }
+  },
+  "projection": {
+    "type": "conicEqualArea",
+    "rotate": [
+      -143,
+      0,
+      0
+    ],
+    "center": [
+      0,
+      -39
+    ],
+    "parallels": [
+      -35,
+      -43
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/southeast_states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#edf2e9",
+        "stroke": "#bacbbf",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "name": "seasonal_connections"
+      },
+      "transform": [
+        {
+          "filter": "datum.season === season"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "detail": {
+          "field": "route"
+        },
+        "order": {
+          "field": "order"
+        },
+        "color": {
+          "field": "season",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Autumn / winter",
+              "Spring / summer"
+            ],
+            "range": [
+              "#39798a",
+              "#a56e1d"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "connection",
+            "title": "Regional connection"
+          },
+          {
+            "field": "evidence",
+            "title": "Evidence"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "name": "seasonal_heads"
+      },
+      "transform": [
+        {
+          "filter": "datum.season === season"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "shape": "triangle-up",
+        "filled": true,
+        "size": 120
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "angle": {
+          "field": "bearing",
+          "type": "quantitative",
+          "scale": null
+        },
+        "color": {
+          "field": "season",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Autumn / winter",
+              "Spring / summer"
+            ],
+            "range": [
+              "#39798a",
+              "#a56e1d"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "data": {
+        "name": "seasonal_regions"
+      },
+      "mark": {
+        "type": "circle",
+        "size": 75,
+        "fill": "#18302b",
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "label",
+            "title": "Approximate region"
+          },
+          {
+            "field": "role",
+            "title": "Role"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "id": "breed",
+            "lon": 146.2,
+            "lat": -43.4,
+            "label": "South-west Tasmania\nSummer breeding",
+            "role": "Summer breeding region"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "dy": 0,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#18302b"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "id": "stop",
+            "lon": 144.0,
+            "lat": -39.9,
+            "label": "King Island\nMigration stopover",
+            "role": "Migration stopover"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "dy": 10,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#18302b"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "id": "vic",
+            "lon": 144.5,
+            "lat": -38.1,
+            "label": "Coastal Victoria\nWinter habitat",
+            "role": "Winter habitat region"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "dy": 0,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#18302b"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "id": "sa",
+            "lon": 139.4,
+            "lat": -36.1,
+            "label": "Coastal SA\nWinter habitat",
+            "role": "Winter habitat region"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "dy": -14,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#18302b"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#18302b"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width * 0"
+          }
+        },
+        "y": {
+          "value": -15
+        },
+        "text": {
+          "value": "Seasonal movement links different habitats\nUse the selector to reverse the direction"
+        }
+      }
+    }
+  ],
+  "params": [
+    {
+      "name": "season",
+      "value": "Autumn / winter",
+      "bind": {
+        "input": "select",
+        "name": "Season: ",
+        "options": [
+          "Autumn / winter",
+          "Spring / summer"
+        ]
+      }
+    }
+  ],
+  "datasets": {
+    "seasonal_connections": [
+      {
+        "route": "breed-stop",
+        "season": "Autumn / winter",
+        "order": 0,
+        "lon": 146.2,
+        "lat": -43.4,
+        "connection": "Summer breeding region → Migration stopover",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "breed-stop",
+        "season": "Autumn / winter",
+        "order": 1,
+        "lon": 144.0,
+        "lat": -39.9,
+        "connection": "Summer breeding region → Migration stopover",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "stop-vic",
+        "season": "Autumn / winter",
+        "order": 0,
+        "lon": 144.0,
+        "lat": -39.9,
+        "connection": "Migration stopover → Winter habitat region",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "stop-vic",
+        "season": "Autumn / winter",
+        "order": 1,
+        "lon": 144.5,
+        "lat": -38.1,
+        "connection": "Migration stopover → Winter habitat region",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "stop-sa",
+        "season": "Autumn / winter",
+        "order": 0,
+        "lon": 144.0,
+        "lat": -39.9,
+        "connection": "Migration stopover → Winter habitat region",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "stop-sa",
+        "season": "Autumn / winter",
+        "order": 1,
+        "lon": 139.4,
+        "lat": -36.1,
+        "connection": "Migration stopover → Winter habitat region",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "stop-breed",
+        "season": "Spring / summer",
+        "order": 0,
+        "lon": 144.0,
+        "lat": -39.9,
+        "connection": "Migration stopover → Summer breeding region",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "stop-breed",
+        "season": "Spring / summer",
+        "order": 1,
+        "lon": 146.2,
+        "lat": -43.4,
+        "connection": "Migration stopover → Summer breeding region",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "vic-stop",
+        "season": "Spring / summer",
+        "order": 0,
+        "lon": 144.5,
+        "lat": -38.1,
+        "connection": "Winter habitat region → Migration stopover",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "vic-stop",
+        "season": "Spring / summer",
+        "order": 1,
+        "lon": 144.0,
+        "lat": -39.9,
+        "connection": "Winter habitat region → Migration stopover",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "sa-stop",
+        "season": "Spring / summer",
+        "order": 0,
+        "lon": 139.4,
+        "lat": -36.1,
+        "connection": "Winter habitat region → Migration stopover",
+        "evidence": "Generalised regional connection; not a tracked path"
+      },
+      {
+        "route": "sa-stop",
+        "season": "Spring / summer",
+        "order": 1,
+        "lon": 144.0,
+        "lat": -39.9,
+        "connection": "Winter habitat region → Migration stopover",
+        "evidence": "Generalised regional connection; not a tracked path"
+      }
+    ],
+    "seasonal_heads": [
+      {
+        "season": "Autumn / winter",
+        "lon": 144.484,
+        "lat": -40.67,
+        "bearing": 334.1039223757365
+      },
+      {
+        "season": "Autumn / winter",
+        "lon": 144.39,
+        "lat": -38.496,
+        "bearing": 12.339640014210463
+      },
+      {
+        "season": "Autumn / winter",
+        "lon": 140.412,
+        "lat": -36.936,
+        "bearing": 314.9134493682863
+      },
+      {
+        "season": "Spring / summer",
+        "lon": 145.71599999999998,
+        "lat": -42.629999999999995,
+        "bearing": 155.5667776723773
+      },
+      {
+        "season": "Spring / summer",
+        "lon": 144.11,
+        "lat": -39.504,
+        "bearing": 192.02493978905457
+      },
+      {
+        "season": "Spring / summer",
+        "lon": 142.988,
+        "lat": -39.064,
+        "bearing": 137.7479947818333
+      }
+    ],
+    "seasonal_regions": [
+      {
+        "id": "breed",
+        "lon": 146.2,
+        "lat": -43.4,
+        "label": "South-west Tasmania\nSummer breeding",
+        "role": "Summer breeding region"
+      },
+      {
+        "id": "stop",
+        "lon": 144.0,
+        "lat": -39.9,
+        "label": "King Island\nMigration stopover",
+        "role": "Migration stopover"
+      },
+      {
+        "id": "vic",
+        "lon": 144.5,
+        "lat": -38.1,
+        "label": "Coastal Victoria\nWinter habitat",
+        "role": "Winter habitat region"
+      },
+      {
+        "id": "sa",
+        "lon": 139.4,
+        "lat": -36.1,
+        "label": "Coastal SA\nWinter habitat",
+        "role": "Winter habitat region"
+      }
+    ]
+  },
+  "usermeta": {
+    "source": "https://www.dcceew.gov.au/environment/biodiversity/threatened/action-plan/orange-bellied-parrot",
+    "inference": "Schematic regional origin-destination connections based on published seasonal ranges, not telemetry."
+  }
+}

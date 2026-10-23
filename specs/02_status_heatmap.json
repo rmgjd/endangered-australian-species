@@ -153,6 +153,95 @@
           }
         ]
       }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.group === 'Invertebrates' && datum.status === 'Critically Endangered'"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "fillOpacity": 0,
+        "stroke": "#a53935",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "status",
+          "type": "nominal",
+          "sort": [
+            "Critically Endangered",
+            "Endangered",
+            "Vulnerable"
+          ],
+          "title": null,
+          "axis": {
+            "labelAngle": 0,
+            "labelExpr": "datum.label === 'Critically Endangered' ? 'Critical' : datum.label"
+          }
+        },
+        "y": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "Birds",
+            "Mammals",
+            "Reptiles",
+            "Amphibians",
+            "Fish",
+            "Invertebrates"
+          ],
+          "title": null
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Group"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Status"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Entries"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#a53935"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width * 0"
+          }
+        },
+        "y": {
+          "value": -35
+        },
+        "text": {
+          "value": "49 critically endangered invertebrates\nThe largest count at this status"
+        }
+      }
     }
   ]
 }

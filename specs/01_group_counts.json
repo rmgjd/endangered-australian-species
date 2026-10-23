@@ -113,6 +113,83 @@
           "field": "count"
         }
       }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "group": "Birds",
+            "count": 164
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#a53935",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              190
+            ]
+          }
+        },
+        "y": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "Birds",
+            "Mammals",
+            "Invertebrates",
+            "Reptiles",
+            "Fish",
+            "Amphibians"
+          ]
+        },
+        "x2": {
+          "value": {
+            "expr": "width * .88"
+          }
+        },
+        "y2": {
+          "value": -21
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#a53935"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width * 0.98"
+          }
+        },
+        "y": {
+          "value": -35
+        },
+        "text": {
+          "value": "Largest listed group\nBirds account for 26.2%"
+        }
+      }
     }
   ]
 }

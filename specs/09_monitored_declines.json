@@ -167,6 +167,81 @@
           "field": "label"
         }
       }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "group": "Amphibians",
+            "decline_pct": 97
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#a53935",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "decline_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ]
+          }
+        },
+        "y": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "Amphibians",
+            "Reptiles",
+            "Birds",
+            "Mammals"
+          ]
+        },
+        "x2": {
+          "value": {
+            "expr": "width * .91"
+          }
+        },
+        "y2": {
+          "value": -19
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#a53935"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width * 0.98"
+          }
+        },
+        "y": {
+          "value": -35
+        },
+        "text": {
+          "value": "Amphibian and reptile samples\nshow 94–97% average declines"
+        }
+      }
     }
   ]
 }

@@ -690,43 +690,77 @@
       }
     ]
   },
-  "mark": {
-    "type": "rect",
-    "stroke": "white",
-    "strokeWidth": 1
-  },
-  "encoding": {
-    "x": {
-      "field": "x",
-      "type": "ordinal",
-      "axis": null
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "ordinal",
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "ordinal",
+          "axis": null
+        },
+        "color": {
+          "field": "covered",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              true,
+              false
+            ],
+            "range": [
+              "#2b7566",
+              "#dbe5da"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "label",
+            "type": "nominal",
+            "title": "Monitoring"
+          }
+        ]
+      }
     },
-    "y": {
-      "field": "y",
-      "type": "ordinal",
-      "axis": null
-    },
-    "color": {
-      "field": "covered",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          true,
-          false
-        ],
-        "range": [
-          "#2b7566",
-          "#dbe5da"
+    {
+      "data": {
+        "values": [
+          {}
         ]
       },
-      "legend": null
-    },
-    "tooltip": [
-      {
-        "field": "label",
-        "type": "nominal",
-        "title": "Monitoring"
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#a53935"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width * 0"
+          }
+        },
+        "y": {
+          "value": -14
+        },
+        "text": {
+          "value": "61 of 110 lack TSX time series\nCoverage is not recovery"
+        }
       }
-    ]
-  }
+    }
+  ]
 }

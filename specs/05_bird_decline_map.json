@@ -71,7 +71,8 @@
           "legend": {
             "orient": "bottom",
             "gradientLength": 240,
-            "direction": "horizontal"
+            "direction": "horizontal",
+            "offset": 70
           }
         },
         "tooltip": [
@@ -143,6 +144,140 @@
             "value": "#fff"
           },
           "value": "#18302b"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 135.821,
+            "lat": -30.084,
+            "order": 0
+          },
+          {
+            "lon": 120,
+            "lat": -38.7,
+            "order": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "line",
+        "strokeWidth": 1.1,
+        "color": "#a53935"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "order": {
+          "field": "order"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 113.5,
+            "lat": -40.6,
+            "text": "Largest monitored decline\nSA: 70.6%; 28 bird taxa"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#a53935"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "text"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 148.999,
+            "lat": -35.494
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 1.1,
+        "color": "#a53935"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "x2": {
+          "value": {
+            "expr": "width * .88"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "height + 10"
+          }
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#a53935"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width * 0.98"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "height + 43"
+          }
+        },
+        "text": {
+          "value": "NSW + ACT: one shared estimate\n47.1%; 37 monitored taxa"
         }
       }
     }

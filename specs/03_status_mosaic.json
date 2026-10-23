@@ -323,6 +323,52 @@
           "field": "label"
         }
       }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0.9096,
+            "y": 0.2168,
+            "label": "43.4%\ncritical"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 13,
+        "color": "#fff"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "text": {
+          "field": "label"
+        }
+      }
     }
   ]
 }

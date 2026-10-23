@@ -152,48 +152,136 @@
           }
         ]
       },
-      "mark": {
-        "type": "bar",
-        "color": "#2b7566"
-      },
-      "encoding": {
-        "x": {
-          "field": "rank",
-          "type": "nominal",
-          "sort": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"
-          ],
-          "axis": null
-        },
-        "y": {
-          "field": "count",
-          "type": "quantitative",
-          "title": "Entries"
-        },
-        "tooltip": [
-          {
-            "field": "pattern",
-            "type": "nominal",
-            "title": "State flags"
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "color": "#2b7566"
           },
-          {
-            "field": "count",
-            "type": "quantitative",
-            "title": "Entries"
+          "encoding": {
+            "x": {
+              "field": "rank",
+              "type": "nominal",
+              "sort": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12"
+              ],
+              "axis": null
+            },
+            "y": {
+              "field": "count",
+              "type": "quantitative",
+              "title": "Entries"
+            },
+            "tooltip": [
+              {
+                "field": "pattern",
+                "type": "nominal",
+                "title": "State flags"
+              },
+              {
+                "field": "count",
+                "type": "quantitative",
+                "title": "Entries"
+              }
+            ],
+            "color": {
+              "condition": {
+                "test": "datum.rank === '1'",
+                "value": "#a53935"
+              },
+              "value": "#2b7566"
+            }
           }
-        ]
-      }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "rank": "1",
+                "count": 92
+              }
+            ]
+          },
+          "mark": {
+            "type": "rule",
+            "color": "#a53935",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {
+              "field": "rank",
+              "type": "nominal",
+              "sort": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12"
+              ]
+            },
+            "y": {
+              "field": "count",
+              "type": "quantitative"
+            },
+            "x2": {
+              "value": {
+                "expr": "width * .3"
+              }
+            },
+            "y2": {
+              "value": -19
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {}
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "bottom",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "lineBreak": "\n",
+            "lineHeight": 14,
+            "color": "#a53935"
+          },
+          "encoding": {
+            "x": {
+              "value": {
+                "expr": "width * 0.33"
+              }
+            },
+            "y": {
+              "value": -35
+            },
+            "text": {
+              "value": "QLD alone: 92 entries\nThe largest exact combination"
+            }
+          }
+        }
+      ]
     },
     {
       "width": "container",

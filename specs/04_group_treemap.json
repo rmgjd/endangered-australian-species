@@ -261,6 +261,36 @@
           "value": "#18302b"
         }
       }
+    },
+    {
+      "data": {
+        "values": [
+          {}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14,
+        "color": "#18302b"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width * 0"
+          }
+        },
+        "y": {
+          "value": -16
+        },
+        "text": {
+          "value": "Equal totals produce equal areas\nMammals and invertebrates: 113 each"
+        }
+      }
     }
   ],
   "usermeta": {
