@@ -21,7 +21,7 @@ This visual story is for a general Australian audience. It asks how nationally r
 - The UpSet chart shows only the twelve most common exact combinations of the eight state flags. `External only` means none of those eight flags is `Yes`; it does not mean the species has no Australian occurrence.
 - TSX values are **relative abundance changes**, not estimated population sizes. The 1985 group comparisons are from four monitored animal groups; state bird estimates compare 2000 with 2022. NSW and ACT have one combined TSX estimate and are coloured alike.
 - The unit chart shows that TSX holds data for 49 of the Action Plan's 110 national priority species, including plants. Each square is one priority species. Coverage is not a conservation outcome.
-- The three species examples are qualitative summaries of the current DCCEEW Action Plan profiles for the [Maugean skate](https://www.dcceew.gov.au/environment/biodiversity/threatened/action-plan/priority-fish/maugean-skate), [orange-bellied parrot](https://www.dcceew.gov.au/environment/biodiversity/threatened/action-plan/priority-birds/orange-bellied-parrot) and [northern hairy-nosed wombat](https://www.dcceew.gov.au/environment/biodiversity/threatened/action-plan/northern-hairy-nosed-wombat). They illustrate distinct challenges; they are not a numerical ranking of the most endangered species.
+- The three species examples are qualitative summaries of the current DCCEEW Action Plan profiles for the [Maugean skate](https://www.dcceew.gov.au/environment/biodiversity/threatened/action-plan/maugean-skate), [orange-bellied parrot](https://www.dcceew.gov.au/environment/biodiversity/threatened/action-plan/orange-bellied-parrot) and [northern hairy-nosed wombat](https://www.dcceew.gov.au/environment/biodiversity/threatened/action-plan/northern-hairy-nosed-wombat). They illustrate distinct challenges; they are not a numerical ranking of the most endangered species.
 
 ## Visual design rules drawn from the course notes
 
@@ -60,3 +60,4 @@ The source CSV, GIS files and TSX report are stored outside the public site in `
 ## Limits to keep visible
 
 The EPBC list measures legal status and indicative distribution, not the true number of all threatened animals. Some species remain undescribed or unlisted. TSX results cover contributing monitored taxa and can be affected by spatial, taxonomic and temporal gaps. A decline in average monitored relative abundance cannot be attributed to a specific threat or recovery program from these charts. The 2025 TSX report calls its reptile index a pilot.
+
