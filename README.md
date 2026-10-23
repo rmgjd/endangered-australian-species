@@ -2,7 +2,9 @@
 
 An interactive, single-page visualisation by **Tianyi Xiao**.
 
-The published entry point is `index.html`. Keep the `data/` and `specs/` folders beside it: every chart loads its local data and Vega-Lite specification by a relative path. `.nojekyll` ensures GitHub Pages serves these files directly.
+The entry point is `index.html`. It loads `chart-bundle.js`, a generated copy of all 12 specifications with their data embedded. This avoids browser restrictions on fetching JSON when opening `index.html` directly through `file://`. Keep `chart-bundle.js` beside the HTML, CSS and JavaScript. An internet connection is still required for the Vega libraries loaded from jsDelivr.
+
+The `data/` and `specs/` folders remain the readable source files and support the specification links. The hosted page can also load these JSON files if the bundle is unavailable. `.nojekyll` ensures GitHub Pages serves these files directly. After changing a specification or dataset, run `../scripts/build_chart_bundle.py`; `build_specs.py` also rebuilds the bundle automatically.
 
 ## Publish on GitHub Pages
 

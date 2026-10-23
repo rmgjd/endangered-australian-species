@@ -5,8 +5,20 @@ const charts = [
   ['09','09_monitored_declines'],['10','10_priority_coverage'],['11','11_birds_mammals_states'],
   ['12','12_parrot_seasonal_flow']
 ];
-const version = '20261023-hd-callouts-2';
+const version = '20261023-file-support-1';
 const views = new Map();
+
+async function loadChartSpec(name){
+  const bundled = window.DV2_CHART_SPECS?.[name];
+  // Each render changes responsive settings, so use a fresh copy of the source.
+  if(bundled)return JSON.parse(JSON.stringify(bundled));
+  if(window.location.protocol==='file:'){
+    throw new Error('chart-bundle.js is missing. Keep it beside index.html or open the hosted website.');
+  }
+  const response=await fetch('specs/'+name+'.json?v='+version);
+  if(!response.ok)throw new Error('Specification unavailable');
+  return response.json();
+}
 
 async function renderCharts(){
   if(typeof vegaEmbed !== 'function'){
@@ -17,9 +29,7 @@ async function renderCharts(){
     const el=document.getElementById('chart-'+id);
     if(!el)return;
     try{
-      const response=await fetch('specs/'+name+'.json?v='+version);
-      if(!response.ok)throw new Error('Specification unavailable');
-      const spec=await response.json();
+      const spec=await loadChartSpec(name);
       if(id==='01'){
         if(spec.layer)spec.layer.forEach(layer=>{if(layer.encoding?.x?.field==='count')layer.encoding.x.axis={tickCount:5}});
         else spec.encoding.x.axis={tickCount:5};

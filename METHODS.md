@@ -60,7 +60,7 @@ Explanatory annotations are drawn inside the SVGs, alongside the narrative outsi
 
 ## Rebuild
 
-The source CSV, GIS files and TSX report are stored outside the public site in `../data/raw/`. Run `../scripts/prepare_data.py` and then `../scripts/build_specs.py` from the repository workspace. The public page serves only compact processed JSON and human-readable Vega-Lite specifications. No numbers or locations are randomly generated. The unit-chart squares represent documented aggregate counts; they do not identify individual species.
+The source CSV, GIS files and TSX report are stored outside the public site in `../data/raw/`. Run `../scripts/prepare_data.py` and then `../scripts/build_specs.py` from the repository workspace. This also runs `build_chart_bundle.py`, which packages the specifications and their processed data into `chart-bundle.js`. The browser loads that generated script so charts also work when the HTML is opened directly from disk, where `fetch()` of local JSON is blocked. Responsive rendering uses a fresh copy of each bundled specification. The separate JSON files remain available for inspection and hosted fallback loading. After editing JSON directly, rerun `../scripts/build_chart_bundle.py`. An internet connection is still needed for the Vega libraries on jsDelivr. No numbers or locations are randomly generated. The unit-chart squares represent documented aggregate counts; they do not identify individual species.
 
 ## Limits to keep visible
 
