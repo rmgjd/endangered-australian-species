@@ -17,7 +17,7 @@ This visual story is for a general Australian audience. It asks how nationally r
 - Taxonomic classes were combined into six readable groups. Fish includes Actinopterygii, Chondrichthyes, Cephalaspidomorphi and Sarcopterygii. Invertebrates includes the remaining animal classes outside birds, mammals, reptiles, amphibians and fish. These are editorial groupings for general readers, not formal taxonomic ranks.
 - A state count is the number of included entries with a `Yes` flag for that jurisdiction. One entry can be counted in multiple states. The values are **indicative occurrence**, not a survey of individuals or a state-specific listing status.
 - The mosaic uses widths proportional to each group's share of 625, and within each group the stacked heights are proportional to its three status counts. Each rectangle therefore has area proportional to its count.
-- The treemap uses rectangles whose areas are proportional to group entry counts. Their positions have no geographic meaning.
+- The treemap uses a squarified partition of the national total into six animal-group children. Rectangle areas equal each group's count divided by 625; labels show the count and percentage. A second partition suits the narrower phone aspect ratio. Rectangle and text layers explicitly share coordinate domains, and the layout has been checked for overlaps, full coverage and proportional area. Positions have no geographic meaning.
 - The UpSet chart shows only the twelve most common exact combinations of the eight state flags. `External only` means none of those eight flags is `Yes`; it does not mean the species has no Australian occurrence.
 - TSX values are **relative abundance changes**, not estimated population sizes. The 1985 group comparisons are from four monitored animal groups; state bird estimates compare 2000 with 2022. NSW and ACT have one combined TSX estimate and are coloured alike.
 - The unit chart shows that TSX holds data for 49 of the Action Plan's 110 national priority species, including plants. Each square is one priority species. Coverage is not a conservation outcome.
@@ -25,11 +25,11 @@ This visual story is for a general Australian audience. It asks how nationally r
 
 ## Visual design rules drawn from the course notes
 
-- **Layout:** The title starts at top left. Four chapters follow a top-to-bottom reading path. Shared card edges and equal columns create sight-lines; whitespace separates topics. The large map occupies the visual centre of the geography chapter. Source: *FIT2179 Course Notes 9 Layout*, pp. 2–6.
+- **Layout:** The compact introduction starts at top left. Four chapters follow a top-to-bottom reading path. A ranking with a reading note, paired status charts, a treemap spread, an annotated map, and a monitoring feature vary the composition within shared columns and sight-lines. The two smaller maps have equal plotting dimensions and aligned captions, annotations and source notes. Whitespace separates topics. Source: *FIT2179 Course Notes 9 Layout*, pp. 2–6.
 - **Typography:** A short display headline establishes hierarchy; body text uses readable sentence case and moderate line length. Chart notes are visually secondary but remain legible. Source: *FIT2179 Course Notes 11 Typography*, especially pp. 2, 10–12.
 - **Colour:** A small palette is reused consistently. Red indicates greater extinction concern or larger monitored decline, while muted green supports structure and place context. Ordered values change mainly in lightness; no rainbow or red-versus-green categorical scale is used. Source: *FIT2179 Course Notes 8 Colour*, pp. 5–10.
 - **Maps:** The choropleth colours a *percentage change*, not a raw count; it uses an Australian Albers equal-area conic projection centred on 134°E, with standard parallels 18°S and 36°S. The Map Projections notes distinguish regional conic projections from Equal Earth, which is intended for world maps. The separate proportional-symbol map uses circle **area** for state-attached counts. A dot map uses one constant-size mark per priority place. Source: *FIT2179 Course Notes Choropleth*, pp. 2–4; *Proportional Symbol Maps*, pp. 2–5; *Dot Maps*, pp. 2–3; *Map Projections*, pp. 2–5.
-- **Storytelling:** Each chart title states the reader task or finding. Notes explain what the measure means and what it cannot establish. Minimal gridlines and borders reduce clutter. Source: *FIT3179 Course Notes 7 Storytelling with Data*, pp. 2–4; *FIT2179 Course Notes 6 Data-ink Ratio and Chartjunk*.
+- **Storytelling:** Each chart title states the reader task or finding. Chart-order badges have been removed. Direct counts, state percentages and endpoint labels accompany annotations about specific findings. Callouts distinguish listing, occurrence, decline and monitoring coverage. Minimal gridlines and borders reduce clutter. Source: *FIT3179 Course Notes 7 Storytelling with Data*, pp. 2–4; *FIT2179 Course Notes 6 Data-ink Ratio and Chartjunk*.
 
 ## Chart register
 
@@ -51,7 +51,7 @@ The brief counts small multiples as one chart. These eleven are separate charts.
 
 ## Rendering checks
 
-Chart widths are recalculated when the viewport changes. The intersection chart reserves space for its axes, and the 22-by-5 unit grid uses equal cell widths and heights. The mosaic has direct group labels and its complete status legend; the treemap uses dark text on pale fills. Offshore priority places are named on the map. JavaScript and chart specifications have a release identifier in their URLs to avoid retaining an older specification after deployment.
+Chart widths are recalculated when the viewport changes. The intersection chart reserves space for its axes, and the 22-by-5 unit grid uses equal cell widths and heights. The mosaic has direct group labels and its complete status legend. The treemap labels counts and shares, with compact labels and an alternate partition at narrow widths. The two adjacent maps use the same Australian geographic frame: 18 priority-place dots are projected with the state geometry, while Christmas Island and Norfolk Islands appear in an explicitly labelled schematic inset. Inset positions do not represent longitude, latitude or distance. All 20 places retain tooltips. JavaScript, CSS and chart specifications have release identifiers to avoid retaining older files after deployment.
 
 ## Rebuild
 

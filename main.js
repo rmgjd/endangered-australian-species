@@ -4,7 +4,7 @@ const charts = [
   ['07','07_priority_places_map'],['08','08_state_intersections'],
   ['09','09_monitored_declines'],['10','10_priority_coverage'],['11','11_birds_mammals_states']
 ];
-const version = '20261014-regional-maps-4';
+const version = '20261023-annotated-story-1';
 const views = new Map();
 
 async function renderCharts(){
@@ -18,16 +18,49 @@ async function renderCharts(){
       const response=await fetch('specs/'+name+'.json?v='+version);
       if(!response.ok)throw new Error('Specification unavailable');
       const spec=await response.json();
-      if(['01','11'].includes(id))spec.encoding.x.axis={tickCount:5};
-      if(id==='09')spec.layer.forEach(layer=>{layer.encoding.x.axis={tickCount:5}});
+      if(id==='01'){
+        if(spec.layer)spec.layer.forEach(layer=>{layer.encoding.x.axis={tickCount:5}});
+        else spec.encoding.x.axis={tickCount:5};
+      }
+      if(id==='11')spec.encoding.x.axis={tickCount:5};
+      if(id==='09')spec.layer.forEach(layer=>{
+        layer.encoding.x.axis={tickCount:5};
+        if(el.clientWidth<420)layer.encoding.x.title='Decline since 1985 (%)';
+      });
       // Give concatenated charts their actual plot width, including axis space.
       if(id==='08')spec.vconcat.forEach(panel=>{panel.width=Math.max(180,el.clientWidth-62)});
       if(id==='03' && el.clientWidth<420)Object.assign(spec.layer[1].mark,{angle:-50,align:'left'});
+      if(id==='04' && spec.usermeta?.mobileTreemapValues){
+        if(el.clientWidth<420)spec.data.values=spec.usermeta.mobileTreemapValues;
+        spec.height=el.clientWidth<420?280:330;
+        spec.layer[1].mark.fontSize=el.clientWidth<420?11:13;
+        spec.layer[2].mark.fontSize=el.clientWidth<420?10:12;
+        if(el.clientWidth<420){
+          spec.layer[1].encoding.text.field='shortGroup';
+          spec.data.values.forEach(row=>{
+            row.detail=row.count+' · '+(row.share*100).toFixed(1)+'%';
+            row.shortGroup={Amphibians:'Amphib.',Invertebrates:'Inverts.'}[row.group]||row.group;
+          });
+        }
+      }
       if(id==='10'){
         spec.width=Math.min(660,el.clientWidth-20);
         spec.height=spec.width*5/22;
       }
-      if(['05','06','07'].includes(id))spec.height=Math.min(id==='05'?440:340,Math.max(230,el.clientWidth*.85));
+      if(id==='05'){
+        spec.height=Math.min(430,Math.max(270,el.clientWidth*.8));
+        if(el.clientWidth<420)spec.layer[1].mark.fontSize=9;
+      }
+      if(id==='06'||id==='07'){
+        const mapHeight=Math.min(360,Math.max(270,el.clientWidth*.8));
+        const mapWidth=Math.max(200,el.clientWidth-16);
+        if(id==='06')Object.assign(spec,{width:mapWidth,height:mapHeight});
+        else if(spec.vconcat){
+          Object.assign(spec.vconcat[0],{width:mapWidth,height:mapHeight});
+          spec.vconcat[1].width=mapWidth;
+        }else Object.assign(spec,{width:mapWidth,height:mapHeight});
+        el.style.minHeight=window.innerWidth>760?'480px':'0';
+      }
       views.get(id)?.finalize();
       const result=await vegaEmbed(el,spec,{actions:false,renderer:'svg',hover:true});
       views.set(id,result.view);
