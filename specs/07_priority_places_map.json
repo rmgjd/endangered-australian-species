@@ -1,8 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Locations of the 20 Threatened Species Action Plan priority places",
-  "width": "container",
-  "height": 340,
   "background": null,
   "padding": 8,
   "config": {
@@ -26,101 +24,158 @@
       "orient": "bottom"
     }
   },
-  "projection": {
-    "type": "conicEqualArea",
-    "rotate": [
-      -134,
-      0,
-      0
-    ],
-    "center": [
-      0,
-      -28
-    ],
-    "parallels": [
-      -18,
-      -36
-    ]
-  },
-  "layer": [
+  "vconcat": [
     {
-      "data": {
-        "url": "data/states.geojson",
-        "format": {
-          "type": "json",
-          "property": "features"
-        }
+      "width": "container",
+      "height": 340,
+      "projection": {
+        "type": "conicEqualArea",
+        "rotate": [
+          -134,
+          0,
+          0
+        ],
+        "center": [
+          0,
+          -28
+        ],
+        "parallels": [
+          -18,
+          -36
+        ]
       },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#edf1e7",
-        "stroke": "#c5d4c9",
-        "strokeWidth": 1
-      }
+      "layer": [
+        {
+          "data": {
+            "url": "data/states.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#edf1e7",
+            "stroke": "#c5d4c9",
+            "strokeWidth": 1
+          }
+        },
+        {
+          "data": {
+            "url": "data/priority_places.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.state !== 'External Territory'"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "size": 92,
+            "color": "#a53935",
+            "opacity": 0.9,
+            "stroke": "#fff",
+            "strokeWidth": 1.2
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "tooltip": [
+              {
+                "field": "name",
+                "type": "nominal",
+                "title": "Priority place"
+              },
+              {
+                "field": "state",
+                "type": "nominal",
+                "title": "State"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
+      "width": "container",
+      "height": 50,
+      "title": {
+        "text": "OFFSHORE PLACES · schematic inset, not to scale",
+        "anchor": "start",
+        "fontSize": 10,
+        "fontWeight": "normal",
+        "color": "#557069"
+      },
       "data": {
-        "url": "data/priority_places.json"
-      },
-      "mark": {
-        "type": "circle",
-        "size": 92,
-        "color": "#a53935",
-        "opacity": 0.9,
-        "stroke": "#fff",
-        "strokeWidth": 1.2
-      },
-      "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
-        "tooltip": [
+        "values": [
           {
-            "field": "name",
-            "type": "nominal",
-            "title": "Priority place"
+            "name": "Norfolk Islands",
+            "state": "External Territory",
+            "lon": 167.9503,
+            "lat": -29.0604,
+            "url": "https://www.dcceew.gov.au/environment/biodiversity/threatened/strategy/priority-places/norfolk-island",
+            "slot": 0
           },
           {
-            "field": "state",
-            "type": "nominal",
-            "title": "State"
+            "name": "Christmas Island",
+            "state": "External Territory",
+            "lon": 105.6289,
+            "lat": -10.4851,
+            "url": "https://www.dcceew.gov.au/environment/biodiversity/threatened/strategy/priority-places/christmas-island",
+            "slot": 1
           }
         ]
-      }
-    },
-    {
-      "data": {
-        "url": "data/priority_places.json"
-      },
-      "transform": [
-        {
-          "filter": "datum.state === 'External Territory'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "dy": 16,
-        "fontSize": 10,
-        "color": "#18302b"
       },
       "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "name"
+        "x": {
+          "field": "slot",
+          "type": "ordinal",
+          "axis": null
         }
-      }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "circle",
+            "size": 92,
+            "color": "#a53935"
+          },
+          "encoding": {
+            "y": {
+              "value": 10
+            },
+            "tooltip": [
+              {
+                "field": "name",
+                "type": "nominal",
+                "title": "Priority place"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "dy": 20,
+            "fontSize": 11,
+            "color": "#18302b"
+          },
+          "encoding": {
+            "y": {
+              "value": 10
+            },
+            "text": {
+              "field": "name"
+            }
+          }
+        }
+      ]
     }
   ]
 }

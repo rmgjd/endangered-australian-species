@@ -69,8 +69,9 @@
           },
           "title": "Bird decline %",
           "legend": {
-            "orient": "right",
-            "gradientLength": 220
+            "orient": "bottom",
+            "gradientLength": 240,
+            "direction": "horizontal"
           }
         },
         "tooltip": [
@@ -99,12 +100,30 @@
       "transform": [
         {
           "filter": "datum.state !== 'ACT'"
+        },
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "data/tsx_states.json"
+            },
+            "key": "state",
+            "fields": [
+              "decline_pct"
+            ]
+          }
+        },
+        {
+          "calculate": "datum.state + '\\n' + format(datum.decline_pct, '.1f') + '%'",
+          "as": "label"
         }
       ],
       "mark": {
         "type": "text",
-        "fontSize": 12,
-        "fontWeight": "bold"
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "lineHeight": 14
       },
       "encoding": {
         "longitude": {
@@ -116,7 +135,7 @@
           "type": "quantitative"
         },
         "text": {
-          "field": "state"
+          "field": "label"
         },
         "color": {
           "condition": {

@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Treemap of nationally threatened fauna by animal group",
+  "description": "Treemap: each rectangle's area is its animal group's share of 625 listed entries",
   "width": "container",
-  "height": 275,
+  "height": 330,
   "background": null,
   "padding": 8,
   "config": {
@@ -31,62 +31,74 @@
       {
         "group": "Birds",
         "count": 164,
-        "x0": 0,
-        "x1": 0.624,
-        "y0": 0,
-        "y1": 0.4205128205128205,
-        "cx": 0.312,
-        "cy": 0.21025641025641026
+        "share": 0.2624,
+        "x0": 0.0,
+        "x1": 0.44320000000000004,
+        "y0": 0.0,
+        "y1": 0.5920577617328521,
+        "cx": 0.22160000000000002,
+        "cy": 0.29602888086642604,
+        "detail": "164 entries · 26.2%"
       },
       {
         "group": "Mammals",
         "count": 113,
-        "x0": 0,
-        "x1": 0.624,
-        "y0": 0.4205128205128205,
-        "y1": 0.7102564102564103,
-        "cx": 0.312,
-        "cy": 0.5653846153846154
+        "share": 0.1808,
+        "x0": 0.0,
+        "x1": 0.44320000000000004,
+        "y0": 0.5920577617328521,
+        "y1": 1.0,
+        "cx": 0.22160000000000002,
+        "cy": 0.796028880866426,
+        "detail": "113 entries · 18.1%"
       },
       {
         "group": "Invertebrates",
         "count": 113,
-        "x0": 0,
-        "x1": 0.624,
-        "y0": 0.7102564102564103,
-        "y1": 1,
-        "cx": 0.312,
-        "cy": 0.8551282051282052
+        "share": 0.1808,
+        "x0": 0.44320000000000004,
+        "x1": 0.7888,
+        "y0": 0.0,
+        "y1": 0.5231481481481481,
+        "cx": 0.616,
+        "cy": 0.26157407407407407,
+        "detail": "113 entries · 18.1%"
       },
       {
         "group": "Reptiles",
         "count": 103,
-        "x0": 0.624,
-        "x1": 1,
-        "y0": 0,
-        "y1": 0.4382978723404255,
-        "cx": 0.812,
-        "cy": 0.21914893617021275
+        "share": 0.1648,
+        "x0": 0.44320000000000004,
+        "x1": 0.7888,
+        "y0": 0.5231481481481481,
+        "y1": 1.0,
+        "cx": 0.616,
+        "cy": 0.7615740740740741,
+        "detail": "103 entries · 16.5%"
       },
       {
         "group": "Fish",
         "count": 83,
-        "x0": 0.624,
-        "x1": 1,
-        "y0": 0.4382978723404255,
-        "y1": 0.7914893617021277,
-        "cx": 0.812,
-        "cy": 0.6148936170212767
+        "share": 0.1328,
+        "x0": 0.7888,
+        "x1": 1.0,
+        "y0": 0.0,
+        "y1": 0.6287878787878787,
+        "cx": 0.8944,
+        "cy": 0.31439393939393934,
+        "detail": "83 entries · 13.3%"
       },
       {
         "group": "Amphibians",
         "count": 49,
-        "x0": 0.624,
-        "x1": 1,
-        "y0": 0.7914893617021277,
-        "y1": 1,
-        "cx": 0.812,
-        "cy": 0.8957446808510638
+        "share": 0.0784,
+        "x0": 0.7888,
+        "x1": 0.9999999999999998,
+        "y0": 0.6287878787878787,
+        "y1": 1.0,
+        "cx": 0.8943999999999999,
+        "cy": 0.8143939393939393,
+        "detail": "49 entries · 7.8%"
       }
     ]
   },
@@ -166,24 +178,80 @@
     {
       "mark": {
         "type": "text",
-        "color": "#18302b",
+        "dy": -10,
         "fontWeight": "bold",
+        "fontSize": 13
+      },
+      "encoding": {
+        "x": {
+          "field": "cx",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "nice": false
+          }
+        },
+        "y": {
+          "field": "cy",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "nice": false
+          }
+        },
+        "text": {
+          "field": "group"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.group === 'Birds' || datum.group === 'Mammals'",
+            "value": "#fff"
+          },
+          "value": "#18302b"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": 12,
         "fontSize": 12
       },
       "encoding": {
         "x": {
           "field": "cx",
           "type": "quantitative",
-          "axis": null
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "nice": false
+          }
         },
         "y": {
           "field": "cy",
           "type": "quantitative",
-          "axis": null
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "nice": false
+          }
         },
         "text": {
-          "field": "group",
-          "type": "nominal"
+          "field": "detail"
         },
         "color": {
           "condition": {
@@ -194,5 +262,81 @@
         }
       }
     }
-  ]
+  ],
+  "usermeta": {
+    "mobileTreemapValues": [
+      {
+        "group": "Birds",
+        "count": 164,
+        "share": 0.2624,
+        "x0": 0.0,
+        "x1": 0.4432,
+        "y0": 0.0,
+        "y1": 0.5920577617328521,
+        "cx": 0.2216,
+        "cy": 0.29602888086642604,
+        "detail": "164 entries · 26.2%"
+      },
+      {
+        "group": "Mammals",
+        "count": 113,
+        "share": 0.1808,
+        "x0": 0.0,
+        "x1": 0.4432,
+        "y0": 0.5920577617328521,
+        "y1": 1.0,
+        "cx": 0.2216,
+        "cy": 0.796028880866426,
+        "detail": "113 entries · 18.1%"
+      },
+      {
+        "group": "Invertebrates",
+        "count": 113,
+        "share": 0.1808,
+        "x0": 0.4432,
+        "x1": 0.7344888888888889,
+        "y0": 0.0,
+        "y1": 0.6206896551724137,
+        "cx": 0.5888444444444444,
+        "cy": 0.31034482758620685,
+        "detail": "113 entries · 18.1%"
+      },
+      {
+        "group": "Reptiles",
+        "count": 103,
+        "share": 0.1648,
+        "x0": 0.7344888888888889,
+        "x1": 1.0,
+        "y0": 0.0,
+        "y1": 0.6206896551724137,
+        "cx": 0.8672444444444445,
+        "cy": 0.31034482758620685,
+        "detail": "103 entries · 16.5%"
+      },
+      {
+        "group": "Fish",
+        "count": 83,
+        "share": 0.1328,
+        "x0": 0.4432,
+        "x1": 0.7933090909090909,
+        "y0": 0.6206896551724137,
+        "y1": 1.0,
+        "cx": 0.6182545454545454,
+        "cy": 0.8103448275862069,
+        "detail": "83 entries · 13.3%"
+      },
+      {
+        "group": "Amphibians",
+        "count": 49,
+        "share": 0.0784,
+        "x0": 0.7933090909090909,
+        "x1": 1.0,
+        "y0": 0.6206896551724137,
+        "y1": 0.9999999999999998,
+        "cx": 0.8966545454545454,
+        "cy": 0.8103448275862067,
+        "detail": "49 entries · 7.8%"
+      }
+    ]
+  }
 }

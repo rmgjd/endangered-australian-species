@@ -108,6 +108,65 @@
           }
         ]
       }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "format(datum.decline_pct, '.0f') + '%'",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": -16,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#a53935"
+      },
+      "encoding": {
+        "x": {
+          "field": "decline_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ]
+          },
+          "title": "Average relative abundance decline since 1985 (%)"
+        },
+        "y": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "Amphibians",
+            "Reptiles",
+            "Birds",
+            "Mammals"
+          ],
+          "title": null
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Group"
+          },
+          {
+            "field": "decline_pct",
+            "type": "quantitative",
+            "title": "Decline %"
+          },
+          {
+            "field": "taxa",
+            "type": "quantitative",
+            "title": "Monitored taxa"
+          }
+        ],
+        "text": {
+          "field": "label"
+        }
+      }
     }
   ]
 }
