@@ -740,25 +740,28 @@
       },
       "mark": {
         "type": "text",
-        "align": "left",
+        "align": "right",
         "baseline": "bottom",
         "fontSize": 11,
-        "fontWeight": "bold",
+        "fontWeight": "normal",
         "lineBreak": "\n",
         "lineHeight": 14,
-        "color": "#a53935"
+        "color": "#557069",
+        "fontStyle": "italic"
       },
       "encoding": {
         "x": {
           "value": {
-            "expr": "width * 0"
+            "expr": "width * 1"
           }
         },
         "y": {
-          "value": -14
+          "value": {
+            "expr": "height + 25"
+          }
         },
         "text": {
-          "value": "61 of 110 lack TSX time series\nCoverage is not recovery"
+          "value": "Coverage describes evidence, not recovery"
         }
       }
     }

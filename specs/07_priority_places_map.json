@@ -103,85 +103,24 @@
         {
           "data": {
             "values": [
-              {}
-            ]
-          },
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "bottom",
-            "fontSize": 11,
-            "fontWeight": "bold",
-            "lineBreak": "\n",
-            "lineHeight": 14,
-            "color": "#18302b"
-          },
-          "encoding": {
-            "x": {
-              "value": {
-                "expr": "width * 0"
-              }
-            },
-            "y": {
-              "value": -20
-            },
-            "text": {
-              "value": "Priority places also cover the interior\nEach equal dot represents one place"
-            }
-          }
-        },
-        {
-          "data": {
-            "values": [
               {
                 "lon": 133.2291,
                 "lat": -23.733,
-                "order": 0
-              },
-              {
-                "lon": 119,
-                "lat": -23.733,
-                "order": 1
-              }
-            ]
-          },
-          "mark": {
-            "type": "line",
-            "strokeWidth": 1.1,
-            "color": "#18302b"
-          },
-          "encoding": {
-            "longitude": {
-              "field": "lon",
-              "type": "quantitative"
-            },
-            "latitude": {
-              "field": "lat",
-              "type": "quantitative"
-            },
-            "order": {
-              "field": "order"
-            }
-          }
-        },
-        {
-          "data": {
-            "values": [
-              {
-                "lon": 113.8,
-                "lat": -20.8,
-                "text": "MacDonnell Ranges\nA priority place in the interior"
+                "text": "MacDonnell Ranges\nAn inland priority place"
               }
             ]
           },
           "mark": {
             "type": "text",
-            "align": "left",
+            "align": "right",
             "fontSize": 11,
-            "fontWeight": "bold",
+            "fontWeight": "normal",
             "lineBreak": "\n",
             "lineHeight": 14,
-            "color": "#18302b"
+            "color": "#18302b",
+            "dx": -12,
+            "dy": 12,
+            "baseline": "top"
           },
           "encoding": {
             "longitude": {
@@ -194,6 +133,33 @@
             },
             "text": {
               "field": "text"
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "lon": 133.2291,
+                "lat": -23.733
+              }
+            ]
+          },
+          "mark": {
+            "type": "circle",
+            "size": 210,
+            "fillOpacity": 0,
+            "stroke": "#a53935",
+            "strokeWidth": 1.5
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
             }
           }
         }

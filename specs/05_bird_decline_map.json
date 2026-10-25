@@ -72,7 +72,7 @@
             "orient": "bottom",
             "gradientLength": 240,
             "direction": "horizontal",
-            "offset": 70
+            "offset": 20
           }
         },
         "tooltip": [
@@ -151,66 +151,74 @@
       "data": {
         "values": [
           {
-            "lon": 135.821,
-            "lat": -30.084,
-            "order": 0
-          },
-          {
-            "lon": 120,
-            "lat": -38.7,
-            "order": 1
+            "point": {
+              "type": "Point",
+              "coordinates": [
+                135.821,
+                -30.084
+              ]
+            }
           }
         ]
       },
       "mark": {
-        "type": "line",
-        "strokeWidth": 1.1,
-        "color": "#a53935"
+        "type": "rule",
+        "strokeWidth": 1,
+        "color": "#18302b",
+        "opacity": 0.65
       },
       "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
+        "x": {
+          "value": {
+            "expr": "geoCentroid('projection', datum.point)[0]"
+          }
         },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
+        "y": {
+          "value": {
+            "expr": "geoCentroid('projection', datum.point)[1]"
+          }
         },
-        "order": {
-          "field": "order"
+        "x2": {
+          "value": {
+            "expr": "width * 0.18"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "height * 0.89 + 22"
+          }
         }
       }
     },
     {
       "data": {
         "values": [
-          {
-            "lon": 113.5,
-            "lat": -40.6,
-            "text": "Largest monitored decline\nSA: 70.6%; 28 bird taxa"
-          }
+          {}
         ]
       },
       "mark": {
         "type": "text",
         "align": "left",
+        "baseline": "bottom",
         "fontSize": 11,
-        "fontWeight": "bold",
+        "fontWeight": "normal",
         "lineBreak": "\n",
         "lineHeight": 14,
-        "color": "#a53935"
+        "color": "#18302b"
       },
       "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
+        "x": {
+          "value": {
+            "expr": "width * 0.02"
+          }
         },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
+        "y": {
+          "value": {
+            "expr": "height * 0.89"
+          }
         },
         "text": {
-          "field": "text"
+          "value": "SA: largest decline\n70.6% in the monitored sample"
         }
       }
     },
@@ -218,35 +226,45 @@
       "data": {
         "values": [
           {
-            "lon": 148.999,
-            "lat": -35.494,
-            "order": 0
-          },
-          {
-            "lon": 155,
-            "lat": -44,
-            "order": 1
+            "point": {
+              "type": "Point",
+              "coordinates": [
+                148.999,
+                -35.494
+              ]
+            }
           }
         ]
       },
       "mark": {
-        "type": "line",
-        "strokeWidth": 1.1,
-        "color": "#a53935"
+        "type": "rule",
+        "strokeWidth": 1,
+        "color": "#557069",
+        "opacity": 0.65
       },
       "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
+        "x": {
+          "value": {
+            "expr": "geoCentroid('projection', datum.point)[0]"
+          }
         },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
+        "y": {
+          "value": {
+            "expr": "geoCentroid('projection', datum.point)[1]"
+          }
         },
-        "order": {
-          "field": "order"
+        "x2": {
+          "value": {
+            "expr": "width * 0.83"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "height * 0.9 + 22"
+          }
         }
-      }
+      },
+      "name": "nsw_shared_leader"
     },
     {
       "data": {
@@ -259,26 +277,27 @@
         "align": "right",
         "baseline": "bottom",
         "fontSize": 11,
-        "fontWeight": "bold",
+        "fontWeight": "normal",
         "lineBreak": "\n",
         "lineHeight": 14,
-        "color": "#a53935"
+        "color": "#557069"
       },
       "encoding": {
         "x": {
           "value": {
-            "expr": "width * 0.98"
+            "expr": "width * 0.99"
           }
         },
         "y": {
           "value": {
-            "expr": "height + 43"
+            "expr": "height * 0.9"
           }
         },
         "text": {
-          "value": "NSW + ACT: one shared estimate\n47.1%; 37 monitored taxa"
+          "value": "NSW + ACT\nOne shared sample"
         }
-      }
+      },
+      "name": "nsw_shared_note"
     }
   ]
 }

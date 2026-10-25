@@ -124,9 +124,12 @@
         ]
       },
       "mark": {
-        "type": "rule",
-        "color": "#a53935",
-        "strokeWidth": 1
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "white"
       },
       "encoding": {
         "x": {
@@ -151,43 +154,8 @@
             "Amphibians"
           ]
         },
-        "x2": {
-          "value": {
-            "expr": "width * .88"
-          }
-        },
-        "y2": {
-          "value": -21
-        }
-      }
-    },
-    {
-      "data": {
-        "values": [
-          {}
-        ]
-      },
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "bottom",
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "lineBreak": "\n",
-        "lineHeight": 14,
-        "color": "#a53935"
-      },
-      "encoding": {
-        "x": {
-          "value": {
-            "expr": "width * 0.98"
-          }
-        },
-        "y": {
-          "value": -35
-        },
         "text": {
-          "value": "Largest listed group\nBirds account for 26.2%"
+          "value": "26.2% of the list"
         }
       }
     }

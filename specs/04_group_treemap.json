@@ -263,33 +263,62 @@
       }
     },
     {
-      "data": {
-        "values": [
-          {}
-        ]
-      },
+      "transform": [
+        {
+          "filter": "datum.group === 'Mammals' || datum.group === 'Invertebrates'"
+        }
+      ],
       "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "bottom",
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "lineBreak": "\n",
-        "lineHeight": 14,
-        "color": "#18302b"
+        "type": "rect",
+        "fillOpacity": 0,
+        "stroke": "#18302b",
+        "strokeWidth": 2,
+        "strokeDash": [
+          4,
+          3
+        ]
       },
       "encoding": {
         "x": {
-          "value": {
-            "expr": "width * 0"
+          "field": "x0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
           }
         },
-        "y": {
-          "value": -16
+        "x2": {
+          "field": "x1"
         },
-        "text": {
-          "value": "Equal totals produce equal areas\nMammals and invertebrates: 113 each"
-        }
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          }
+        },
+        "y2": {
+          "field": "y1"
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Group"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Entries"
+          }
+        ]
       }
     }
   ],

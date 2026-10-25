@@ -39,7 +39,13 @@
         "x": {
           "field": "count",
           "type": "quantitative",
-          "title": "Listed entries flagged in state"
+          "title": "Listed entries flagged in state",
+          "scale": {
+            "domain": [
+              0,
+              115
+            ]
+          }
         },
         "y": {
           "field": "state",
@@ -57,7 +63,11 @@
           "title": null
         },
         "yOffset": {
-          "field": "group"
+          "field": "group",
+          "sort": [
+            "Birds",
+            "Mammals"
+          ]
         },
         "color": {
           "field": "group",
@@ -96,30 +106,64 @@
     {
       "data": {
         "values": [
-          {}
+          {
+            "state": "SA",
+            "group": "Birds",
+            "count": 85,
+            "label": "85 (max)"
+          },
+          {
+            "state": "QLD",
+            "group": "Mammals",
+            "count": 49,
+            "label": "49 (max)"
+          }
         ]
       },
       "mark": {
         "type": "text",
-        "align": "right",
-        "baseline": "bottom",
-        "fontSize": 11,
+        "align": "left",
+        "dx": 5,
+        "fontSize": 10,
         "fontWeight": "bold",
-        "lineBreak": "\n",
-        "lineHeight": 14,
-        "color": "#a53935"
+        "color": "#18302b"
       },
       "encoding": {
         "x": {
-          "value": {
-            "expr": "width * 0.98"
+          "field": "count",
+          "type": "quantitative",
+          "title": "Listed entries flagged in state",
+          "scale": {
+            "domain": [
+              0,
+              115
+            ]
           }
         },
         "y": {
-          "value": -35
+          "field": "state",
+          "type": "nominal",
+          "sort": [
+            "NSW",
+            "QLD",
+            "WA",
+            "VIC",
+            "SA",
+            "TAS",
+            "NT",
+            "ACT"
+          ],
+          "title": null
+        },
+        "yOffset": {
+          "field": "group",
+          "sort": [
+            "Birds",
+            "Mammals"
+          ]
         },
         "text": {
-          "value": "Highest bird count: SA (85)\nHighest mammal count: QLD (49)"
+          "field": "label"
         }
       }
     }

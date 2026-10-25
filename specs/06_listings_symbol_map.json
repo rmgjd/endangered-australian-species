@@ -23,7 +23,14 @@
       "labelColor": "#18302b",
       "titleColor": "#18302b",
       "labelFontSize": 12,
-      "orient": "bottom"
+      "orient": "bottom",
+      "layout": {
+        "bottom": {
+          "direction": "horizontal",
+          "anchor": "start",
+          "margin": 44
+        }
+      }
     }
   },
   "projection": {
@@ -94,7 +101,10 @@
               150,
               250
             ],
-            "direction": "horizontal"
+            "direction": "horizontal",
+            "titlePadding": 9,
+            "symbolFillColor": "#557069",
+            "symbolStrokeColor": "#557069"
           },
           "title": "Listed entries"
         },
@@ -133,8 +143,9 @@
           "title": "Critical share (%)",
           "legend": {
             "orient": "bottom",
-            "gradientLength": 170,
-            "direction": "horizontal"
+            "gradientLength": 150,
+            "direction": "horizontal",
+            "titlePadding": 9
           }
         }
       }
@@ -172,30 +183,75 @@
     {
       "data": {
         "values": [
+          {
+            "point": {
+              "type": "Point",
+              "coordinates": [
+                144.533,
+                -22.573
+              ]
+            }
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 1,
+        "color": "#18302b",
+        "opacity": 0.65
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "geoCentroid('projection', datum.point)[0]"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "geoCentroid('projection', datum.point)[1]"
+          }
+        },
+        "x2": {
+          "value": {
+            "expr": "width * 0.82"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "height * 0.18 + 22"
+          }
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
           {}
         ]
       },
       "mark": {
         "type": "text",
-        "align": "left",
+        "align": "right",
         "baseline": "bottom",
         "fontSize": 11,
-        "fontWeight": "bold",
+        "fontWeight": "normal",
         "lineBreak": "\n",
         "lineHeight": 14,
-        "color": "#a53935"
+        "color": "#18302b"
       },
       "encoding": {
         "x": {
           "value": {
-            "expr": "width * 0"
+            "expr": "width * 0.98"
           }
         },
         "y": {
-          "value": -20
+          "value": {
+            "expr": "height * 0.18"
+          }
         },
         "text": {
-          "value": "Queensland has the highest critical share\n21.6% of its 241 flagged entries"
+          "value": "QLD: 21.6% critical\nHighest state share"
         }
       }
     }

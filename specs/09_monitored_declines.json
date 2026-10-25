@@ -169,18 +169,17 @@
       }
     },
     {
-      "data": {
-        "values": [
-          {
-            "group": "Amphibians",
-            "decline_pct": 97
-          }
-        ]
-      },
+      "transform": [
+        {
+          "filter": "datum.group === 'Reptiles'"
+        }
+      ],
       "mark": {
-        "type": "rule",
-        "color": "#a53935",
-        "strokeWidth": 1
+        "type": "text",
+        "align": "right",
+        "dy": 21,
+        "fontSize": 10,
+        "color": "#557069"
       },
       "encoding": {
         "x": {
@@ -203,43 +202,8 @@
             "Mammals"
           ]
         },
-        "x2": {
-          "value": {
-            "expr": "width * .91"
-          }
-        },
-        "y2": {
-          "value": -19
-        }
-      }
-    },
-    {
-      "data": {
-        "values": [
-          {}
-        ]
-      },
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "bottom",
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "lineBreak": "\n",
-        "lineHeight": 14,
-        "color": "#a53935"
-      },
-      "encoding": {
-        "x": {
-          "value": {
-            "expr": "width * 0.98"
-          }
-        },
-        "y": {
-          "value": -35
-        },
         "text": {
-          "value": "Amphibian and reptile samples\nshow 94–97% average declines"
+          "value": "Reptile index is a pilot"
         }
       }
     }

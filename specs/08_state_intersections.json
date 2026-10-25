@@ -241,13 +241,8 @@
               "field": "count",
               "type": "quantitative"
             },
-            "x2": {
-              "value": {
-                "expr": "width * .3"
-              }
-            },
             "y2": {
-              "value": -19
+              "value": -8
             }
           }
         },
@@ -265,19 +260,19 @@
             "fontWeight": "bold",
             "lineBreak": "\n",
             "lineHeight": 14,
-            "color": "#a53935"
+            "color": "#18302b"
           },
           "encoding": {
             "x": {
               "value": {
-                "expr": "width * 0.33"
+                "expr": "width * 0"
               }
             },
             "y": {
-              "value": -35
+              "value": -17
             },
             "text": {
-              "value": "QLD alone: 92 entries\nThe largest exact combination"
+              "value": "QLD only · 92 entries"
             }
           }
         }

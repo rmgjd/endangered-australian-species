@@ -224,10 +224,10 @@
         "align": "left",
         "baseline": "bottom",
         "fontSize": 11,
-        "fontWeight": "bold",
+        "fontWeight": "normal",
         "lineBreak": "\n",
         "lineHeight": 14,
-        "color": "#a53935"
+        "color": "#18302b"
       },
       "encoding": {
         "x": {
@@ -236,10 +236,10 @@
           }
         },
         "y": {
-          "value": -35
+          "value": -17
         },
         "text": {
-          "value": "49 critically endangered invertebrates\nThe largest count at this status"
+          "value": "Critical listings peak among invertebrates"
         }
       }
     }
