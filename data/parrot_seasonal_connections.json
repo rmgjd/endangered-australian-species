@@ -146,39 +146,111 @@
   "arrowheads": [
     {
       "season": "Autumn / winter",
-      "lon": 144.484,
-      "lat": -40.67,
-      "bearing": 334.1039223757365
+      "route": "breed-stop",
+      "start": {
+        "type": "Point",
+        "coordinates": [
+          146.2,
+          -43.4
+        ]
+      },
+      "end": {
+        "type": "Point",
+        "coordinates": [
+          144.0,
+          -39.9
+        ]
+      }
     },
     {
       "season": "Autumn / winter",
-      "lon": 144.39,
-      "lat": -38.496,
-      "bearing": 12.339640014210463
+      "route": "stop-vic",
+      "start": {
+        "type": "Point",
+        "coordinates": [
+          144.0,
+          -39.9
+        ]
+      },
+      "end": {
+        "type": "Point",
+        "coordinates": [
+          144.5,
+          -38.1
+        ]
+      }
     },
     {
       "season": "Autumn / winter",
-      "lon": 140.412,
-      "lat": -36.936,
-      "bearing": 314.9134493682863
+      "route": "stop-sa",
+      "start": {
+        "type": "Point",
+        "coordinates": [
+          144.0,
+          -39.9
+        ]
+      },
+      "end": {
+        "type": "Point",
+        "coordinates": [
+          139.4,
+          -36.1
+        ]
+      }
     },
     {
       "season": "Spring / summer",
-      "lon": 145.71599999999998,
-      "lat": -42.629999999999995,
-      "bearing": 155.5667776723773
+      "route": "stop-breed",
+      "start": {
+        "type": "Point",
+        "coordinates": [
+          144.0,
+          -39.9
+        ]
+      },
+      "end": {
+        "type": "Point",
+        "coordinates": [
+          146.2,
+          -43.4
+        ]
+      }
     },
     {
       "season": "Spring / summer",
-      "lon": 144.11,
-      "lat": -39.504,
-      "bearing": 192.02493978905457
+      "route": "vic-stop",
+      "start": {
+        "type": "Point",
+        "coordinates": [
+          144.5,
+          -38.1
+        ]
+      },
+      "end": {
+        "type": "Point",
+        "coordinates": [
+          144.0,
+          -39.9
+        ]
+      }
     },
     {
       "season": "Spring / summer",
-      "lon": 142.988,
-      "lat": -39.064,
-      "bearing": 137.7479947818333
+      "route": "sa-stop",
+      "start": {
+        "type": "Point",
+        "coordinates": [
+          139.4,
+          -36.1
+        ]
+      },
+      "end": {
+        "type": "Point",
+        "coordinates": [
+          144.0,
+          -39.9
+        ]
+      }
     }
   ]
 }
