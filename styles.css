@@ -34,3 +34,16 @@
 .figure-links{display:flex;flex-wrap:wrap;gap:14px}
 .map-pair figcaption{min-height:165px}
 @media(max-width:760px){.map-pair figcaption{min-height:0}.flow-feature{margin-top:28px;padding:24px 0}}
+
+/* Match the annotation treatment to its role in the story. */
+.annotation--metric{display:flex;gap:18px;align-items:flex-start;border:0;border-top:1px solid var(--line);padding:16px 0 0;margin-top:20px;max-width:65ch}
+.annotation--metric>strong{font:400 2.6rem/1.05 Georgia,serif;color:var(--rust);white-space:nowrap;flex:0 0 auto}
+.annotation--metric>span{font-size:.82rem;line-height:1.6;padding-top:2px}
+.annotation--comparison{border-left:0;border-top:3px solid #d88340;padding:14px 0 0;margin-top:20px}
+.annotation--inset{border:0;padding:15px 17px;background:#fff;margin-top:20px}
+.annotation--context{border:0;border-top:1px solid var(--line);padding:16px 0 0;margin-top:20px;color:var(--muted)}
+.annotation--context strong{display:block;color:var(--ink);margin-bottom:5px}
+.annotation--plain{border:0;padding-left:0;color:var(--muted)}
+.annotation--caution{border:0;border-top:2px solid #d6b574;background:#faf6ec;padding:13px 16px;font-size:.8rem;color:#62543a}
+.annotation--coverage{border:0;margin-top:18px;padding-top:0;max-width:77ch}
+@media(max-width:760px){.annotation--metric{gap:14px}.annotation--metric>strong{font-size:2.15rem}.annotation--coverage{max-width:60ch}}

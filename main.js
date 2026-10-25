@@ -5,7 +5,7 @@ const charts = [
   ['09','09_monitored_declines'],['10','10_priority_coverage'],['11','11_birds_mammals_states'],
   ['12','12_parrot_seasonal_flow']
 ];
-const version = '20261025-flow-arrows-1';
+const version = '20261025-annotation-layout-1';
 const views = new Map();
 
 async function loadChartSpec(name){
@@ -66,7 +66,14 @@ async function renderCharts(){
       }
       if(id==='05'){
         spec.height=Math.min(430,Math.max(270,el.clientWidth*.8));
-        if(el.clientWidth<420)spec.layer.forEach(layer=>{if(layer.mark?.type==='text')layer.mark.fontSize=10});
+        if(el.clientWidth<420){
+          spec.layer=spec.layer.filter(layer=>layer.name!=='nsw_shared_leader');
+          spec.layer.forEach(layer=>{if(layer.mark?.type==='text')layer.mark.fontSize=10});
+          const sharedNote=spec.layer.find(layer=>layer.name==='nsw_shared_note');
+          sharedNote.encoding.text.value='NSW + ACT share one sample';
+          sharedNote.encoding.y.value={expr:'height + 18'};
+          spec.layer[0].encoding.color.legend.offset=38;
+        }
       }
       if(id==='06'||id==='07'){
         const mapHeight=Math.min(360,Math.max(270,el.clientWidth*.8));
@@ -77,10 +84,25 @@ async function renderCharts(){
           spec.vconcat[1].width=mapWidth;
         }else Object.assign(spec,{width:mapWidth,height:mapHeight});
         el.style.minHeight='0';
+        if(id==='06' && el.clientWidth<480){
+          spec.config.legend.layout.bottom={direction:'vertical',anchor:'start',margin:22};
+        }
       }
       if(id==='12'){
         spec.height=el.clientWidth<420?330:430;
-        if(el.clientWidth<420)spec.layer.forEach(layer=>{if(layer.mark?.type==='text')layer.mark.fontSize=10});
+        if(el.clientWidth<420){
+          spec.layer.forEach(layer=>{if(layer.mark?.type==='text')layer.mark.fontSize=10});
+          const seasonNote=spec.layer.at(-1);
+          seasonNote.mark.align='left';
+          seasonNote.encoding.x.value=0;
+          seasonNote.encoding.y.value={expr:'height + 20'};
+          seasonNote.encoding.text.value={expr:"season === 'Autumn / winter' ? 'Autumn / winter: toward the mainland' : 'Spring / summer: return to Tasmania'"};
+        }
+      }
+      if(el.clientWidth<420){
+        // Keep explanatory sentences readable within the narrower plot area.
+        if(id==='02')spec.layer.at(-1).encoding.text.value='Invertebrates lead the critical column';
+        if(id==='10')spec.layer.at(-1).encoding.text.value='Coverage is not recovery';
       }
       views.get(id)?.finalize();
       const result=await vegaEmbed(el,spec,{actions:false,renderer:'svg',hover:true});
