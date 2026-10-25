@@ -5,7 +5,7 @@ const charts = [
   ['09','09_monitored_declines'],['10','10_priority_coverage'],['11','11_birds_mammals_states'],
   ['12','12_parrot_seasonal_flow']
 ];
-const version = '20261023-file-support-1';
+const version = '20261025-flow-arrows-1';
 const views = new Map();
 
 async function loadChartSpec(name){
