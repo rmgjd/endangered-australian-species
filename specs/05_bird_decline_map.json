@@ -148,24 +148,85 @@
       }
     },
     {
+      "name": "sa_decline_leader",
       "data": {
         "values": [
           {
             "point": {
               "type": "Point",
               "coordinates": [
-                135.821,
-                -30.084
+                133,
+                -31.2
+              ]
+            },
+            "step": 0
+          },
+          {
+            "point": {
+              "type": "Point",
+              "coordinates": [
+                133,
+                -31.2
+              ]
+            },
+            "step": 1
+          },
+          {
+            "point": {
+              "type": "Point",
+              "coordinates": [
+                133,
+                -31.2
+              ]
+            },
+            "step": 2
+          }
+        ]
+      },
+      "mark": {
+        "type": "line",
+        "strokeWidth": 1,
+        "color": "#557069",
+        "opacity": 0.8
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "datum.step === 0 ? geoCentroid('projection', datum.point)[0] : (max(8, geoCentroid('projection', datum.point)[0] - 206)) + (datum.step === 1 ? 112 : 96)"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "datum.step === 0 ? geoCentroid('projection', datum.point)[1] : (min(height - 36, geoCentroid('projection', datum.point)[1] + 54)) + 10"
+          }
+        },
+        "order": {
+          "field": "step",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "name": "sa_decline_anchor",
+      "data": {
+        "values": [
+          {
+            "point": {
+              "type": "Point",
+              "coordinates": [
+                133,
+                -31.2
               ]
             }
           }
         ]
       },
       "mark": {
-        "type": "rule",
-        "strokeWidth": 1,
-        "color": "#18302b",
-        "opacity": 0.65
+        "type": "circle",
+        "size": 22,
+        "fill": "#18302b",
+        "stroke": "white",
+        "strokeWidth": 1
       },
       "encoding": {
         "x": {
@@ -177,48 +238,46 @@
           "value": {
             "expr": "geoCentroid('projection', datum.point)[1]"
           }
-        },
-        "x2": {
-          "value": {
-            "expr": "width * 0.18"
-          }
-        },
-        "y2": {
-          "value": {
-            "expr": "height * 0.89 + 22"
-          }
         }
       }
     },
     {
+      "name": "sa_decline_note",
       "data": {
         "values": [
-          {}
+          {
+            "point": {
+              "type": "Point",
+              "coordinates": [
+                133,
+                -31.2
+              ]
+            }
+          }
         ]
       },
       "mark": {
         "type": "text",
         "align": "left",
-        "baseline": "bottom",
+        "baseline": "top",
         "fontSize": 11,
-        "fontWeight": "normal",
         "lineBreak": "\n",
-        "lineHeight": 14,
+        "lineHeight": 15,
         "color": "#18302b"
       },
       "encoding": {
         "x": {
           "value": {
-            "expr": "width * 0.02"
+            "expr": "max(8, geoCentroid('projection', datum.point)[0] - 206)"
           }
         },
         "y": {
           "value": {
-            "expr": "height * 0.89"
+            "expr": "min(height - 36, geoCentroid('projection', datum.point)[1] + 54)"
           }
         },
         "text": {
-          "value": "SA: largest decline\n70.6% in the monitored sample"
+          "value": "Largest decline\nSA · 70.6%"
         }
       }
     },
