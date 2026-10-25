@@ -75,3 +75,5 @@ The EPBC list measures legal status and indicative distribution, not the true nu
 ## Spacing refinement — 25 October 2026
 
 The heatmap's emphasis rectangle is inset by 4px on each edge, with a 2px stroke, so it does not cover either axis. The opening and geography sections use tighter heading and chart gaps. The choropleth has a more compact column and a 390px maximum plot height. The monitoring coverage graphic and its 44.5% explanation share a desktop row, while narrow screens retain a single column. Unit cells remain square and all 110 units are retained.
+
+The South Australia callout now follows a nearby projected anchor in western inland SA, away from the central state label. A short bent connector stops beside the two-line note with a clear gap, rather than crossing its text. Its position is recalculated with the map projection and capped within the plotting height on narrow screens. The note identifies the largest decline among the displayed monitored samples; the values and geographic boundaries are unchanged.
