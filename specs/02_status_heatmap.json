@@ -164,35 +164,28 @@
         "type": "rect",
         "fillOpacity": 0,
         "stroke": "#a53935",
-        "strokeWidth": 3
+        "strokeWidth": 2
       },
       "encoding": {
         "x": {
-          "field": "status",
-          "type": "nominal",
-          "sort": [
-            "Critically Endangered",
-            "Endangered",
-            "Vulnerable"
-          ],
-          "title": null,
-          "axis": {
-            "labelAngle": 0,
-            "labelExpr": "datum.label === 'Critically Endangered' ? 'Critical' : datum.label"
+          "value": {
+            "expr": "scale('x', datum.status) + 4"
+          }
+        },
+        "x2": {
+          "value": {
+            "expr": "scale('x', datum.status) + bandwidth('x') - 4"
           }
         },
         "y": {
-          "field": "group",
-          "type": "nominal",
-          "sort": [
-            "Birds",
-            "Mammals",
-            "Reptiles",
-            "Amphibians",
-            "Fish",
-            "Invertebrates"
-          ],
-          "title": null
+          "value": {
+            "expr": "scale('y', datum.group) + 4"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "scale('y', datum.group) + bandwidth('y') - 4"
+          }
         },
         "tooltip": [
           {
