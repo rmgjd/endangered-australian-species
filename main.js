@@ -5,7 +5,7 @@ const charts = [
   ['09','09_monitored_declines'],['10','10_priority_coverage'],['11','11_birds_mammals_states'],
   ['12','12_parrot_seasonal_flow']
 ];
-const version = '20261025-annotation-layout-1';
+const version = '20261025-compact-sections-1';
 const views = new Map();
 
 async function loadChartSpec(name){
@@ -61,11 +61,11 @@ async function renderCharts(){
         }
       }
       if(id==='10'){
-        spec.width=Math.min(660,el.clientWidth-20);
+        spec.width=Math.max(220,el.clientWidth-16);
         spec.height=spec.width*5/22;
       }
       if(id==='05'){
-        spec.height=Math.min(430,Math.max(270,el.clientWidth*.8));
+        spec.height=Math.min(390,Math.max(270,el.clientWidth*.68));
         if(el.clientWidth<420){
           spec.layer=spec.layer.filter(layer=>layer.name!=='nsw_shared_leader');
           spec.layer.forEach(layer=>{if(layer.mark?.type==='text')layer.mark.fontSize=10});

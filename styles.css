@@ -47,3 +47,32 @@
 .annotation--caution{border:0;border-top:2px solid #d6b574;background:#faf6ec;padding:13px 16px;font-size:.8rem;color:#62543a}
 .annotation--coverage{border:0;margin-top:18px;padding-top:0;max-width:77ch}
 @media(max-width:760px){.annotation--metric{gap:14px}.annotation--metric>strong{font-size:2.15rem}.annotation--coverage{max-width:60ch}}
+
+/* Compact the three story areas while keeping their shared alignment. */
+.hero{padding-bottom:20px}
+#listings{padding-top:30px;padding-bottom:36px}
+#listings .chapter-head,.geography .chapter-head,.response .chapter-head{margin-bottom:20px}
+.ranking-row{margin-bottom:28px}
+.ranking-row figcaption p,.map-feature figcaption p{margin-bottom:10px}
+.geography,.response{padding-top:30px}
+.change{padding-bottom:32px}
+.map-feature{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:32px;padding-bottom:24px;margin-bottom:26px}
+.map-reading{padding:12px 0 12px 22px}
+.map-finding{max-width:36ch;margin-bottom:18px}
+.coverage{padding:18px 0}
+.coverage-layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);gap:30px;align-items:center}
+.coverage-graphic{min-width:0}
+.coverage-key{margin-bottom:10px}
+.coverage .annotation--coverage{display:block;border-left:1px solid var(--line);padding:6px 0 6px 24px;margin:0;max-width:none}
+.coverage .annotation--coverage>strong{display:block;font-size:3.2rem;margin-bottom:12px}
+.coverage .annotation--coverage>span{display:block;max-width:38ch}
+.flow-feature{margin-top:26px}
+@media(max-width:760px){
+  #listings{padding-top:26px;padding-bottom:30px}.geography,.response{padding-top:28px}.change{padding-bottom:28px}
+  .map-feature,.coverage-layout{grid-template-columns:1fr;gap:20px}
+  .map-reading{padding:16px 0 0}
+  .coverage .annotation--coverage{display:flex;gap:14px;border:0;padding:0}
+  .coverage .annotation--coverage>strong{font-size:2.15rem;margin:0}
+  .coverage .annotation--coverage>span{max-width:none}
+  .flow-feature{margin-top:24px}
+}

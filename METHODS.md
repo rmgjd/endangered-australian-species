@@ -70,3 +70,8 @@ The source CSV, GIS files and TSX report are stored outside the public site in `
 
 The EPBC list measures legal status and indicative distribution, not the true number of all threatened animals. Some species remain undescribed or unlisted. TSX results cover contributing monitored taxa and can be affected by spatial, taxonomic and temporal gaps. A decline in average monitored relative abundance cannot be attributed to a specific threat or recovery program from these charts. The 2025 TSX report calls its reptile index a pilot.
 
+
+
+## Spacing refinement — 25 October 2026
+
+The heatmap's emphasis rectangle is inset by 4px on each edge, with a 2px stroke, so it does not cover either axis. The opening and geography sections use tighter heading and chart gaps. The choropleth has a more compact column and a 390px maximum plot height. The monitoring coverage graphic and its 44.5% explanation share a desktop row, while narrow screens retain a single column. Unit cells remain square and all 110 units are retained.
